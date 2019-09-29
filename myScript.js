@@ -27,7 +27,7 @@ else {
 console.log("spass is "+spass);
 console.log("repass is "+srepass);
 
-    if(spass===srepass){
+    if(spass==srepass){
       alert("Password and Repassword do not match");
     }
   }

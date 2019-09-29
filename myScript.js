@@ -3,7 +3,7 @@ console.log("Hello from my javascript");
 function myCheck(){
   console.log("Hello on click");
 
-sname = document.querySelector('#fname').value();
+sname = document.querySelector(#fname).value();
 semail = document.querySelector('#femail').value();
 snumber = document.querySelector('#pnumber').value();
 spass = document.querySelector('#fpass');

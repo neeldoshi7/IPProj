@@ -10,6 +10,7 @@ spass = document.querySelector('#fpass').value;
 srepass = document.querySelector('#frepass').value;
 
 console.log(sname + semail + snumber + spass + srepass);
+console.log("length " + snumber.length);
 
 if(sname.length==0 || semail.length==0 || snumber.length==0 || spass.length==0 || srepass.length==0){
   alert("Please fill all the fields");

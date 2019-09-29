@@ -26,12 +26,13 @@ else {
 
 console.log("spass is "+spass);
 console.log("repass is "+srepass);
+console.log("spass L is "+spass.length);
 
 
 if(spass.length<8){
   alert("Password length should be greater than 8")
 }
-    else if(spass==srepass){
+    else if(spass!=srepass){
         alert("Password and Repassword do not match");
     }
 

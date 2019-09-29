@@ -15,7 +15,7 @@ console.log("length " + snumber.length);
 if(sname.length==0 || semail.length==0 || snumber.length==0 || spass.length==0 || srepass.length==0){
   alert("Please fill all the fields");
 
-    if(snumber.length<10 || snumber.length>11){
+    if(snumber.length!=10){
       alert("Phone number should be of length 10");
     }
 
@@ -23,7 +23,8 @@ if(sname.length==0 || semail.length==0 || snumber.length==0 || spass.length==0 |
       alert("Password and Repassword do not match");
     }
 
-
+// upkgowild//go sad // loving // caring // missing drunk you // missing you //
+//heart heart heart
 
 }
 

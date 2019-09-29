@@ -1,3 +1,4 @@
+<<<<<<< HEAD
+=======
 console.log("Hello from submit form");
-
-$('title').text()="Hello"
+>>>>>>> 74f13ff50fbedc04fe8217283c540ffa6849a7b7

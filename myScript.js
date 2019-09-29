@@ -9,8 +9,8 @@ snumber = document.querySelector('#pnumber').value;
 spass = document.querySelector('#fpass').value;
 srepass = document.querySelector('#frepass').value;
 
-console.log(sname + semail + snumber + spass + srepass);
-console.log("length " + snumber.length);
+//console.log(sname + semail + snumber + spass + srepass);
+//console.log("length " + snumber.length);
 
 if(sname.length==0 || semail.length==0 || snumber.length==0 || spass.length==0 || srepass.length==0){
   alert("Please fill all the fields");
@@ -27,9 +27,16 @@ else {
 console.log("spass is "+spass);
 console.log("repass is "+srepass);
 
-    if(spass==srepass){
-      alert("Password and Repassword do not match");
+
+if(spass.length<8){
+  alert("Password length should be greater than 8")
+}
+    else if(spass==srepass){
+        alert("Password and Repassword do not match");
     }
+
+
+
   }
 }
 

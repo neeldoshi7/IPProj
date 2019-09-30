@@ -15,8 +15,6 @@ srepass = document.querySelector('#frepass').value;
 if(sname.length==0 || semail.length==0 || snumber.length==0 || spass.length==0 || srepass.length==0){
   alert("Please fill all the fields");
 
-// upkgowild//go sad // loving // caring // missing drunk you // missing you //
-//heart heart heart
 }
 else {
   {

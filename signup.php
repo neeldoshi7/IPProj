@@ -17,4 +17,8 @@ else {
 }
 $conn->close();
 
+header("Location: https://auctionsite.000webhostapp.com/profile.html");
+
+exit;
+
  ?>

@@ -23,4 +23,6 @@ else {
   echo '</script>';
 }
 
+$conn->close();
+
  ?>

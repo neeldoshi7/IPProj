@@ -4,6 +4,11 @@ $email = $_SESSION["email"];
 $mysqlquery3 = "select name from user where email = '$email'";
 $result = $conn->query($mysqlquery3);
 
+if($result->num_rows === 1){
+  $row = $result->fetch_assoc();
+  echo $row["name"];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

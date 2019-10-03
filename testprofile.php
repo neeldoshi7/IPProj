@@ -65,7 +65,9 @@ if($result->num_rows === 1){
     <hr />
 <br /><br />
     <div class="container">
-<h2>Welcome <?php $_SESSION["name"];?></h2>
+<h2>Welcome <?php session_start();
+ $_SESSION["name"];
+ ?></h2>
     </div>
 
     <div class="">

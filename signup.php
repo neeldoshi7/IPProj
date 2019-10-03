@@ -11,6 +11,7 @@ $mysqlquery = "insert into user(name , email , phoneno , password ) values ('{$n
 
 if($conn->query($mysqlquery) === TRUE){
   echo "Insert successful";
+  include 'profile.html';
 }
 else {
   echo "Error : ". $mysqlquery . "<br>" . $conn->error;

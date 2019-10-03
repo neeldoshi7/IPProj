@@ -15,6 +15,7 @@ if($conn->query($mysqlquery) === TRUE){
 }
 else {
   echo "Error : ". $mysqlquery . "<br>" . $conn->error;
+  include "index.html";
 }
 $conn->close();
 

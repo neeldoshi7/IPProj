@@ -17,6 +17,9 @@ if($result->num_rows === 1){
       echo 'alert("Incorrect password")';
       echo '</script>';
       session_unset();
+      echo "Session variables are unset.incorrect password";
+      echo "Email " . $_SESSION["email"] . ".<br>";
+      echo "Password " . $_SESSION["password"] . ".";
     }
   else{
       $_SESSION["email"] = $email;
@@ -32,6 +35,9 @@ else {
   echo 'alert("User doest not exist")';
   echo '</script>';
   session_unset();
+  echo "Session variables are unset.no user";
+  echo "Email " . $_SESSION["email"] . ".<br>";
+  echo "Password " . $_SESSION["password"] . ".";
 }
 
 $conn->close();

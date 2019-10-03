@@ -65,9 +65,12 @@ if($result->num_rows === 1){
     <hr />
 <br /><br />
     <div class="container">
-<h2>Welcome <?php echo
- $_SESSION["name"];
- ?></h2>
+<h2>Welcome
+  <?php
+  include 'connection.php';
+echo $_SESSION["name"];
+ ?>
+</h2>
     </div>
 
     <div class="">

@@ -22,6 +22,7 @@ if($result->num_rows === 1){
       echo "Password " . $_SESSION["password"] . ".";
     }
   else{
+    session_start();
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
       echo "Session variables are set.";
@@ -29,7 +30,7 @@ if($result->num_rows === 1){
       echo "Password " . $_SESSION["password"] . ".";
       include 'profile.html';
 
-      
+
     }
 }
 else {

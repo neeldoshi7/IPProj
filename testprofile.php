@@ -67,7 +67,6 @@ if($result->num_rows === 1){
     <div class="container">
 <h2>Welcome
   <?php
-  include 'connection.php';
 echo $_SESSION["name"];
  ?>
 </h2>

@@ -7,7 +7,7 @@ $result = $conn->query($mysqlquery3);
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();
   $_SESSION["name"]=$row["name"];
-
+echo $_SESSION["name"];
 }
 
 ?>

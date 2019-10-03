@@ -18,13 +18,13 @@ if($result->num_rows === 1){
       echo '</script>';
     }
   else{
-      include 'profile.html';
       session_start();
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
       echo "Session variables are set.";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
+      include 'profile.html';
     }
 }
 else {

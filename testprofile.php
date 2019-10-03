@@ -1,5 +1,9 @@
 <?php require "connection.php";
 session_start();
+
+$mysqlquery3 = "select name from user where email = '$_SESSION["email"]'";
+$result = $conn->query($mysqlquery2);
+echo "name " . $result;
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -56,7 +60,7 @@ session_start();
     <hr />
 <br /><br />
     <div class="container">
-      <?php echo "email" . $_SESSION["email"]; ?>
+
     </div>
 
     <div class="">

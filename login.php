@@ -8,7 +8,7 @@ $mysqlquery2 = "select password from user where email like $email";
 
 $result = $conn->query($mysqlquery2);
 
-echo $result;
+if ($result === false) { die(mysqli_error($conn)); }
 
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();

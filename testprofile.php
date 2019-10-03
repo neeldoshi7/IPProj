@@ -2,8 +2,8 @@
 session_start();
 $email = $_SESSION["email"];
 $mysqlquery3 = "select name from user where email = '$email'";
-$result = $conn->query($mysqlquery2);
-echo "name " . $result;
+$result = $conn->query($mysqlquery3);
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

@@ -16,9 +16,9 @@ if($result->num_rows === 1){
       echo '<script language="javascript">';
       echo 'alert("Incorrect password")';
       echo '</script>';
+      session_unset();
     }
   else{
-      session_start();
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
       echo "Session variables are set.";
@@ -31,6 +31,7 @@ else {
   echo '<script language="javascript">';
   echo 'alert("User doest not exist")';
   echo '</script>';
+  session_unset();
 }
 
 $conn->close();

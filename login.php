@@ -28,6 +28,8 @@ if($result->num_rows === 1){
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
       include 'profile.html';
+
+      
     }
 }
 else {

@@ -6,7 +6,8 @@ $result = $conn->query($mysqlquery3);
 
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();
-  echo $row["name"];
+  $_SESSION["name"]=$row["name"];
+
 }
 
 ?>
@@ -65,7 +66,7 @@ if($result->num_rows === 1){
     <hr />
 <br /><br />
     <div class="container">
-
+<h2>Welcome <?php $_SESSION["name"];?></h2>
     </div>
 
     <div class="">

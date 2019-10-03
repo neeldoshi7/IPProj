@@ -30,8 +30,6 @@ if($result->num_rows === 1){
       echo "Password " . $_SESSION["password"] . ".";
       include 'profile.html';
 
-      $_SESSION["name"]=$row["name"];
-
     }
 }
 else {

@@ -17,6 +17,9 @@ if($result->num_rows === 1){
       echo 'alert("Incorrect password")';
       echo '</script>';
     }
+  else{
+      inlude 'profile.html';
+    }
 }
 else {
   echo '<script language="javascript">';

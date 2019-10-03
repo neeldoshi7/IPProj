@@ -10,14 +10,13 @@ $result = $conn->query($mysqlquery2);
 
 echo $result;
 
-if($result->num_rows > 0){
-  while($row = $result->fetch_assoc()){
-    if($row["password"] != $pass){
+if($result->num_rows === 1){
+  $row = $result->fetch_assoc();
+  if($row["password"] != $pass){
       echo '<script language="javascript">';
       echo 'alert("Incorrect password")';
       echo '</script>';
     }
-  }
 }
 else {
   echo '<script language="javascript">';

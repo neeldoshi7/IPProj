@@ -4,7 +4,7 @@ require "connection.php";
 $email = $_POST["lemail"];
 $pass = $_POST["lpass"];
 
-$mysqlquery2 = "select password from user where email = $email";
+$mysqlquery2 = "select password from user where email = '$email'";
 
 $result = $conn->query($mysqlquery2);
 

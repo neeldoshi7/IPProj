@@ -3,9 +3,12 @@ session_start();
 $email = $_SESSION["email"];
 $mysqlquery3 = "select name from user where email = '$email'";
 $result = $conn->query($mysqlquery3);
-  
-echo $_SESSION["name"];
 
+if($result->num_rows === 1){
+  $row = $result->fetch_assoc();
+  $_SESSION["name"]=$row["name"];
+  echo $_SESSION["name"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

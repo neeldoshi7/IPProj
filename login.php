@@ -19,6 +19,12 @@ if($result->num_rows === 1){
     }
   else{
       include 'profile.html';
+      session_start();
+      $_SESSION["email"] = $email;
+      $_SESSION["password"] = $pass;
+      echo "Session variables are set.";
+      echo "Email " . $_SESSION["email"] . ".<br>";
+      echo "Password " . $_SESSION["password"] . ".";
     }
 }
 else {

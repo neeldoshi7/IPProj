@@ -15,7 +15,12 @@ if($conn->query($mysqlquery) === TRUE){
 }
 else {
   echo "Error : ". $mysqlquery . "<br>" . $conn->error;
-  include "index.html";
+
+  echo '<script language="javascript">';
+  echo 'alert("User already exists")';
+  echo '</script>';
+
+  include "signup.html";
 }
 $conn->close();
 

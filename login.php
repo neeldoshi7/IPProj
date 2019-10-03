@@ -18,7 +18,7 @@ if($result->num_rows === 1){
       echo '</script>';
     }
   else{
-      inlude 'profile.html';
+      include 'profile.html';
     }
 }
 else {

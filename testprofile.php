@@ -1,4 +1,6 @@
-
+<?php require "connection.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -49,17 +51,12 @@
     </nav>
 <br />
     <div class="container">
-  <?php
-
-  echo "Email" . $_SESSION["email"] . <br />;
-
-  ?>
+      <h1><b>Profile</b></h>
     </div>
     <hr />
 <br /><br />
-
     <div class="container">
-
+      <?php echo "email" . $_SESSION["email"]; ?>
     </div>
 
     <div class="">

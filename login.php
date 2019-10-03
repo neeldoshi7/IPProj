@@ -8,8 +8,8 @@ $mysqlquery2 = "select password from user where email like $email";
 
 $result = $conn->query($mysqlquery2);
 
-if($result -> num_rows === 1){
-  $row = $result -> fetch_assoc();
+if($result->num_rows === 1){
+  $row = $result->fetch_assoc();
   if($row["password"] != $pass){
     echo '<script language="javascript">';
     echo 'alert("Incorrect password")';

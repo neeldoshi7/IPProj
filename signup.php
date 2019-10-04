@@ -16,7 +16,7 @@ if($conn->query($mysqlquery) === TRUE){
   echo "Session variables are set.";
   echo "Email " . $_SESSION["email"] . ".<br>";
   echo "Password " . $_SESSION["password"] . ".";
-  include 'profile.html';
+  include 'testprofile.php';
 }
 else {
   echo "Error : ". $mysqlquery . "<br>" . $conn->error;

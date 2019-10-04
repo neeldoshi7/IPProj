@@ -9,6 +9,8 @@ if($result->num_rows === 1){
   $row = $result->fetch_assoc();
   $_SESSION["name"]=$row["name"];
   echo $_SESSION["name"];
+  $_SESSION["phoneno"]=$row["phoneno"];
+  echo $_SESSION["phoneno"];
 }
 ?>
 <!DOCTYPE html>
@@ -72,12 +74,11 @@ echo $_SESSION["name"];
  ?>
 </h2>
     </div>
+<br/>
+<div>
+  <h3>Phone Number : <?php echo $_SESSION["phoneno"]; ?> </h3><br/>
+  <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
+</div>
 
-    <div class="">
-      <?php include 'connection.php';
-      echo "Hey";
-
-      ?>
-    </div>
   </body>
 </html>

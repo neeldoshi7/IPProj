@@ -33,7 +33,7 @@ if($result->num_rows === 1){
 </script>
     <title>Auction Site</title>
   </head>
-  <body class="container">
+  <body class="">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="index.html">Auction Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +63,7 @@ if($result->num_rows === 1){
       </div>
     </nav>
 <br />
+<div class="container">
     <div class="">
       <h1><b>Profile</b></h>
     </div>
@@ -80,6 +81,6 @@ echo $_SESSION["name"];
   <h3>Phone Number : <?php echo $_SESSION["phoneno"]; ?> </h3><br/>
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div>
-
+</div>
   </body>
 </html>

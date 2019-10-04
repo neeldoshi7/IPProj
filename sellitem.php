@@ -66,10 +66,11 @@ require "connection.php";
   <br /><br />
   <h3>Product Description : </h><input type="textarea" name="prod_desc" value="" id="prod_desc"></input>
 <br /><br />
-<h3>Seller Username : </h><input type="textfield" name="seller_name" value="" id="seller_name"></input>
-<br /><br />
 <h3>Product Amount : </h><input type="textfield" name="prod_amount" value="" id="prod_amount"></input>
 <br /><br />
+<h3>Product Image : </h><input type="textfield" name="prod_img" value="" id="prod_img"></input>
+<br /><br />
+
   </form>
 </div>
 

@@ -3,7 +3,7 @@
 require "connection.php";
 
 $email = $_SESSION["email"];
-$mysqlquery3 = "select name from user where email = '$email'";
+$mysqlquery3 = "select * from user where email = '$email'";
 $result = $conn->query($mysqlquery3);
 
 if($result->num_rows === 1){

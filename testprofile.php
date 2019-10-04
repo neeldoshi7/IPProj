@@ -1,4 +1,5 @@
-<?php require "connection.php";
+<?php
+require "connection.php";
 session_start();
 $email = $_SESSION["email"];
 $mysqlquery3 = "select name from user where email = '$email'";

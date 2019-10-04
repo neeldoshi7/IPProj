@@ -83,11 +83,11 @@ echo $_SESSION["name"];
 </div>
 
 <div>
-  <button type="btn btn-primary" onclick="window.location.href = 'http://google.com';">BUY</button>
+  <button class="btn btn-primary" onclick="window.location.href = 'http://google.com';">BUY</button>
 </div>
 
 <div>
-  <button type="btn btn-primary" onclick="window.location.href = 'https://w3docs.com';">SELL</button>
+  <button class="btn btn-primary" onclick="window.location.href = 'https://w3docs.com';">SELL</button>
 </div>
 
 </div>

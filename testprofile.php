@@ -81,6 +81,15 @@ echo $_SESSION["name"];
   <h3>Phone Number : <?php echo $_SESSION["phoneno"]; ?> </h3><br/>
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div>
+
+<div>
+  <button type="btn btn-primary">BUY</button>
+</div>
+
+<div>
+  <button type="btn btn-primary">SELL</button>
+</div>
+
 </div>
   </body>
 </html>

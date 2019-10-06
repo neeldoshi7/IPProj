@@ -70,7 +70,7 @@ require "connection.php";
 <br /><br />
 <h3>Product Image : </h><input type="file" name="prod_img" value="" id="prod_img"></input>
 <br /><br />
-
+<input type="submit" class="btn btn-primary"></input>
   </form>
 </div>
 

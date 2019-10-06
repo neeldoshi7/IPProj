@@ -60,7 +60,7 @@ require "connection.php";
 <br /><br />
 <!-- form -->
 <div>
-  <form name="form3" id="form3" action="selltable.php" method="POST">
+  <form name="form3" id="form3" action="selltable.php" method="POST" enctype="multipart/form-data">
 
     <h3>Product Name : </h><input type="textfield" name="prod_name" value="" id="prod_name"></input>
   <br /><br />

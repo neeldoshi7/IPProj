@@ -7,7 +7,7 @@ $amount = $_POST["prod_amount"];
 $image = $_FILES['image']['tmp_name'];
     $img = file_get_contents($image);;
 
-$mysqlquery4 = "insert into product(p_name , p_description , amount , image ) values ('{$p_name}','{$p_description}','{$amount}','{$img}')";
+$mysqlquery4 = "insert into products(p_name , p_description , amount , image ) values ('{$p_name}','{$p_description}','{$amount}','{$img}')";
 
 if($conn->query($mysqlquery4) === TRUE){
   echo "Insert successful";

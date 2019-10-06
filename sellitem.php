@@ -60,7 +60,7 @@ require "connection.php";
 <br /><br />
 <!-- form -->
 <div>
-  <form name="form3" id="form3" action="" method="">
+  <form name="form3" id="form3" action="selltable.php" method="POST">
 
     <h3>Product Name : </h><input type="textfield" name="prod_name" value="" id="prod_name"></input>
   <br /><br />
@@ -68,7 +68,7 @@ require "connection.php";
 <br /><br />
 <h3>Product Amount : </h><input type="textfield" name="prod_amount" value="" id="prod_amount"></input>
 <br /><br />
-<h3>Product Image : </h><input type="textfield" name="prod_img" value="" id="prod_img"></input>
+<h3>Product Image : </h><input type="file" name="prod_img" value="" id="prod_img"></input>
 <br /><br />
 
   </form>

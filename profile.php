@@ -86,18 +86,9 @@ echo $_SESSION["name"];
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div>
 
-<div>
-  <button class="btn btn-primary" onclick="window.location.href = 'https://auctionsite.000webhostapp.com/buy.php';">BUY</button>
+<div><form action="buy.php"><input type="submit" class="btn btn-primary"></form></div>
 
-  <button class="btn btn-primary" onclick="window.location.href = 'sellitem.php';">SELL</button>
-</div>
-
-<div><a href="sellitem.php">here</a></div>
-<br/>
-
-<div class="">
-  <button><a href="sellitem.php">Click me!!!!!!!<?php include "sellitem.php"; ?></a></button>
-</div>
+<div><form action="sellitem.php"><input type="submit" class="btn btn-primary"></form></div>
 
 </div>
   </body>

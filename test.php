@@ -1,1 +1,4 @@
-<?php include "sellitem.php"; ?>
+<?php
+session_start();
+require "connection.php";
+include "sellitem.php"; ?>

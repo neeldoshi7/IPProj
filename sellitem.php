@@ -5,7 +5,7 @@ echo "<h3> PHP List All Session Variables</h3>";
     foreach ($_SESSION as $key=>$val)
     echo $key." ".$val."<br/>";
 require "connection.php";
-
+require_once('test.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

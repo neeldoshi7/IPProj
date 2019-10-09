@@ -1,4 +1,8 @@
 <?php
-session_start();
-require "connection.php";
-include "sellitem.php"; ?>
+if(!isset($_SESSION['email']))
+{
+  header('location:login.php');
+  exit();
+}
+
+ ?>

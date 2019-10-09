@@ -1,9 +1,9 @@
 <?php
-//session_start();
+session_start();
 require "connection.php";
 
-
 $email = $_SESSION["email"];
+echo $email;
 $p_name = $_POST["prod_name"];
 $p_description = $_POST["prod_desc"];
 $amount = $_POST["prod_amount"];

@@ -28,7 +28,7 @@ if($result->num_rows === 1){
       echo "Session variables are set.";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
-      include 'testprofile.php';
+      include 'profile.php';
 
     }
 }

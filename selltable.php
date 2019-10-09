@@ -1,6 +1,7 @@
 <?php
-require "connection.php";
 session_start();
+require "connection.php";
+
 
 $email = $_SESSION["email"];
 $p_name = $_POST["prod_name"];

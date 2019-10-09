@@ -88,7 +88,7 @@ echo $_SESSION["name"];
 
 <div><form action="buy.php"><input type="submit" class="btn btn-primary"></form></div>
 
-<div><form action="test.php" method="post"><input type="submit" class="btn btn-primary"></form></div>
+<div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary"></form></div>
 
 </div>
   </body>

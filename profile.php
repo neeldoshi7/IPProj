@@ -92,6 +92,13 @@ echo $_SESSION["name"];
   <button class="btn btn-primary" onclick="window.location.href = 'sellitem.php';">SELL</button>
 </div>
 
+<div><a href="sellitem.php"></a></div>
+<br/>
+
+<div class="">
+  <button><a href="sellitem.php">Click me!!!!!!!</a></button>
+</div>
+
 </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 require "connection.php";
+session_start();
 
 $email = $_SESSION["email"];
 $p_name = $_POST["prod_name"];
@@ -9,7 +10,7 @@ $image = $_FILES['prod_img']['tmp_name'];
 // echo "image " . $image;
 $img = addslashes(file_get_contents($image));
 
-$mysqlquery4 = "insert into products(p_name , p_description , seller , buyer , amount , image ) values ('{$p_name}','{$p_description}', '{$email}', ' ', '{$amount}','{$img}')";
+$mysqlquery4 = "insert into products(p_name , p_description , seller , buyer , amount , image , sold) values ('{$p_name}','{$p_description}', '{$email}', ' ', '{$amount}','{$img}' false)";
 
 if($conn->query($mysqlquery4) === TRUE){
   echo "Insert successful";

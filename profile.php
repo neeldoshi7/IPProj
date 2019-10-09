@@ -89,7 +89,7 @@ echo $_SESSION["name"];
 <div>
   <button class="btn btn-primary" onclick="window.location.href = 'https://auctionsite.000webhostapp.com/buy.php';">BUY</button>
 
-  <button class="btn btn-primary" onclick="window.location.href = 'https://auctionsite.000webhostapp.com/sellitem.php';">SELL</button>
+  <button class="btn btn-primary" onclick="window.location.href = 'sellitem.php';">SELL</button>
 </div>
 
 </div>

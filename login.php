@@ -30,6 +30,7 @@ if($result->num_rows === 1){
       echo "Password " . $_SESSION["password"] . ".";
       // include 'profile.php';
       header("Location:profile.php");
+      exit;
     }
 }
 else {

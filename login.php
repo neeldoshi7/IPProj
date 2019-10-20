@@ -23,7 +23,6 @@ if($result->num_rows === 1){
     }
   else{
     session_start();
-    echo "Session id is ".session_id()."<br><br>";
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
       echo "Session variables are set.";

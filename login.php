@@ -28,8 +28,8 @@ if($result->num_rows === 1){
       echo "Session variables are set.";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
-      // include 'profile.php';
-      header("Location:profile.php");
+      include 'profile.php';
+      // header("Location:profile.php");
       exit;
     }
 }

@@ -76,11 +76,9 @@ echo "<h3> PHP List All Session Variables</h3>";
       $mysqlquery4 = "select * from products";
       $result = $conn->query($mysqlquery4);
       if($result->num_rows > 0) {
-        ?>
-        <tr>
-          <?php
           while($row = $result->fetch_assoc()) {
           ?>
+          <tr>
           <td>
             <?php
             print($row["p_id"]);
@@ -111,12 +109,14 @@ echo "<h3> PHP List All Session Variables</h3>";
             print($row["image"]);
             ?>
       		</td>
-      	<!-- }
-      }else {
-      	print null;
-      }
-      ?> -->
+
       </tr>
+      <?php
+        }
+      }else {
+        print null;
+      }
+      ?>
     </table>
 </div>
   </body>

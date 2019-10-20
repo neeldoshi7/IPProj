@@ -20,6 +20,8 @@ if($result->num_rows === 1){
       echo "Session variables are unset.incorrect password";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
+      include 'login.php';
+      exit;
     }
   else{
     session_start();

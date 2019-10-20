@@ -91,6 +91,26 @@ echo $_SESSION["name"];
 
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
 
+<div>
+  <h2>Products Sold :
+    <?php
+    $mysqlquery5 = "SELECT COUNT(*) FROM product_sold WHERE email = '{$email}'";
+    $result = $conn->query($mysqlquery5)->fetch_array();
+    echo $result[0];
+    ?>
+  </h2>
+
+  <h2>Products Bought :
+    <?php
+    $mysqlquery6 = "SELECT COUNT(*) FROM product_bought WHERE email = '{$email}'";
+    $result = $conn->query($mysqlquery6)->fetch_array();
+    echo $result[0];
+    ?>
+  </h2>
+
 </div>
+
+</div>
+
   </body>
 </html>

@@ -39,7 +39,7 @@ else {
   echo '<script language="javascript">';
   echo 'alert("User doest not exist")';
   echo '</script>';
-  session_unset();
+  // session_unset();
   echo "Session variables are unset.no user";
   echo "Email " . $_SESSION["email"] . ".<br>";
   echo "Password " . $_SESSION["password"] . ".";

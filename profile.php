@@ -108,6 +108,22 @@ echo $_SESSION["name"];
     ?>
   </h2>
 
+  <h2>Currently Bidding On :
+    <?php
+    $mysqlquery7 = "SELECT COUNT(*) FROM product_bidding WHERE bidder_email = '{$email}'";
+    $result = $conn->query($mysqlquery7)->fetch_array();
+    echo $result[0];
+    ?>
+  </h2>
+
+  <h2>Products Selling :
+    <?php
+    $mysqlquery8 = "SELECT COUNT(*) FROM product_selling WHERE email = '{$email}'";
+    $result = $conn->query($mysqlquery8)->fetch_array();
+    echo $result[0];
+    ?>
+  </h2>
+
 </div>
 
 </div>

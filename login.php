@@ -28,9 +28,9 @@ if($result->num_rows === 1){
     // session_start();
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
-      echo "Session variables are set.";
-      echo "Email " . $_SESSION["email"] . ".<br>";
-      echo "Password " . $_SESSION["password"] . ".";
+      // echo "Session variables are set.";
+      // echo "Email " . $_SESSION["email"] . ".<br>";
+      // echo "Password " . $_SESSION["password"] . ".";
       // require_once 'profile.php';
       // header("Location:profile.php");
       header("Location: https://auctionsite.000webhostapp.com/profile.php");

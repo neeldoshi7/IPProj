@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require "connection.php";
 echo "<h3> PHP List All Session Variables</h3>";
     foreach ($_SESSION as $key=>$val)
@@ -89,7 +89,7 @@ echo $_SESSION["name"];
 
 <div><form action="buy.php"><input type="submit" class="btn btn-primary">BUY</form></div>
 
-<div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" onclick="<?php include 'sellitem.php'; ?>">SELL</form></div>
+<div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
 
 </div>
   </body>

@@ -1,5 +1,5 @@
 <?php
-session_start();  
+session_start();
 require "connection.php";
 if (isset($_SESSION['email']))
     echo ' all html code ';

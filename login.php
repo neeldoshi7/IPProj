@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "connection.php";
 
 $email = $_POST["lemail"];
@@ -16,7 +17,7 @@ if($result->num_rows === 1){
       echo '<script language="javascript">';
       echo 'alert("Incorrect password")';
       echo '</script>';
-      // session_unset();
+      session_unset();
       echo "Session variables are unset.incorrect password";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
@@ -24,14 +25,15 @@ if($result->num_rows === 1){
       exit;
     }
   else{
-    session_start();
+    // session_start();
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $pass;
       echo "Session variables are set.";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
-      require_once 'profile.php';
+      // require_once 'profile.php';
       // header("Location:profile.php");
+      header("Location: https://auctionsite.000webhostapp.com/profile.php");
       exit;
     }
 }
@@ -39,7 +41,7 @@ else {
   echo '<script language="javascript">';
   echo 'alert("User doest not exist")';
   echo '</script>';
-  // session_unset();
+  session_unset();
   echo "Session variables are unset.no user";
   echo "Email " . $_SESSION["email"] . ".<br>";
   echo "Password " . $_SESSION["password"] . ".";

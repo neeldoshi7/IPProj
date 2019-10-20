@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (isset($_SESSION['admin']))
+if (isset($_SESSION['email']))
     echo ' all html code ';
 echo "<h3> PHP List All Session Variables</h3>";
     foreach ($_SESSION as $key=>$val)

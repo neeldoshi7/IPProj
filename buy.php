@@ -1,6 +1,13 @@
 <?php
-// session_start();
+session_start();
 require "connection.php";
+if (isset($_SESSION['email']))
+    echo ' all html code ';
+echo "<h3> PHP List All Session Variables</h3>";
+    foreach ($_SESSION as $key=>$val)
+    echo $key." ".$val."<br/>";
+// require_once('test.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -56,11 +63,61 @@ require "connection.php";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    <hr />
-<br /><br />
-
-<br/>
-
+    <table>
+      <th>
+        <td>Sr. No.</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Seller ID</td>
+        <td>Min Amount</td>
+        <td>Image</td>
+      </th>
+      <?php
+      $mysqlquery4 = "select * from products";
+      $result = $conn->query($mysqlquery4);
+      if($result->num_rows > 0) {
+        ?>
+        <tr>
+          <?php
+          while($row = $result->fetch_assoc()) {
+          ?>
+          <td>
+            <?php
+            print($row["p_id"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            print($row["p_name"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            print($row["p_description"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            print($row["seller"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            print($row["amount"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            print($row["image"]);
+            ?>
+      		</td>
+      	<!-- }
+      }else {
+      	print null;
+      }
+      ?> -->
+      </tr>
+    </table>
 </div>
   </body>
 </html>

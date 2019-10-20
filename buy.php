@@ -73,7 +73,7 @@ echo "<h3> PHP List All Session Variables</h3>";
         <td>Image</td>
       </th>
       <?php
-      $mysqlquery4 = "select * from `products`";
+      $mysqlquery4 = "select * from `product`";
       $result = $conn->query($mysqlquery4);
 
 if (!$result) {
@@ -110,7 +110,8 @@ if (!$result) {
       		</td>
           <td>
             <?php
-            print($row["image"]);
+            // print($row["image"]);
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row["image"]).'"/>'
             ?>
       		</td>
 

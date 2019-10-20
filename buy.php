@@ -75,6 +75,10 @@ echo "<h3> PHP List All Session Variables</h3>";
       <?php
       $mysqlquery4 = "select * from products";
       $result = $conn->query($mysqlquery4);
+
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
       if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()) {
           ?>
@@ -114,7 +118,7 @@ echo "<h3> PHP List All Session Variables</h3>";
       <?php
         }
       }else {
-        print null;
+        print 'null';
       }
       ?>
     </table>

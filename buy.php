@@ -73,7 +73,7 @@ echo "<h3> PHP List All Session Variables</h3>";
         <td>Image</td>
       </th>
       <?php
-      $mysqlquery4 = "select * from products";
+      $mysqlquery4 = "select * from `products`";
       $result = $conn->query($mysqlquery4);
 
 if (!$result) {

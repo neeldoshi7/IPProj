@@ -1,11 +1,11 @@
 <?php
-session_start();
+session_start();  
+require "connection.php";
 if (isset($_SESSION['email']))
     echo ' all html code ';
 echo "<h3> PHP List All Session Variables</h3>";
     foreach ($_SESSION as $key=>$val)
     echo $key." ".$val."<br/>";
-require "connection.php";
 // require_once('test.php');
 ?>
 <!DOCTYPE html>

@@ -16,11 +16,11 @@ if($result->num_rows === 1){
       echo '<script language="javascript">';
       echo 'alert("Incorrect password")';
       echo '</script>';
-      session_unset();
+      // session_unset();
       echo "Session variables are unset.incorrect password";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
-      include 'login.php';
+      // include 'login.php';
       exit;
     }
   else{
@@ -30,7 +30,7 @@ if($result->num_rows === 1){
       echo "Session variables are set.";
       echo "Email " . $_SESSION["email"] . ".<br>";
       echo "Password " . $_SESSION["password"] . ".";
-      include 'profile.php';
+      require_once 'profile.php';
       // header("Location:profile.php");
       exit;
     }

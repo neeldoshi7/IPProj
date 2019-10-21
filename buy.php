@@ -63,17 +63,17 @@ echo "<h3> PHP List All Session Variables</h3>";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    <table>
-      <th>
-        <td>Sr. No.</td>
-        <td>Name</td>
-        <td>Description</td>
-        <td>Seller ID</td>
-        <td>Min Amount</td>
-        <td>Image</td>
-      </th>
+    <table border="1">
+      <tr>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Seller ID</th>
+        <th>Min Amount</th>
+        <th>Image</th>
+      </tr>
       <?php
-      $mysqlquery4 = "select * from `product`";
+      $mysqlquery4 = "select * from `product` where sold=0";
       $result = $conn->query($mysqlquery4);
 
 if (!$result) {
@@ -105,13 +105,15 @@ if (!$result) {
       		</td>
           <td>
             <?php
-            print($row["amount"]);
+            print($row["base_amount"]);
             ?>
       		</td>
           <td>
             <?php
             // print($row["image"]);
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row["image"]).'"/>'
+            // echo '<img src="data:image/jpeg;base64,'.base64_encode($row["image"]).'"/>'
+            // echo "img src='",$row['image'],"' width='175' height='200' />";
+            echo '<img src="data:image/jpg;base64,'.base64_encode( stripslashes($row['image']) ).'" width="200" height="100"/>'
             ?>
       		</td>
 

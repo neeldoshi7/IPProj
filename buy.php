@@ -67,9 +67,7 @@ echo "<h3> PHP List All Session Variables</h3>";
       <tr>
         <th>Sr. No.</th>
         <th>Name</th>
-        <th>Description</th>
-        <th>Seller ID</th>
-        <th>Min Amount</th>
+        <th>Amount</th>
         <th>Image</th>
       </tr>
       <?php
@@ -88,21 +86,15 @@ if (!$result) {
             print($row["p_id"]);
             ?>
       		</td>
-          <td>
+      		<td>
+          <a href="https://www.google.com">
+
             <?php
             print($row["p_name"]);
             ?>
-      		</td>
-          <td>
-            <?php
-            print($row["p_description"]);
-            ?>
-      		</td>
-          <td>
-            <?php
-            print($row["seller"]);
-            ?>
-      		</td>
+
+           </a>
+           </td>
           <td>
             <?php
             print($row["base_amount"]);
@@ -110,9 +102,6 @@ if (!$result) {
       		</td>
           <td>
             <?php
-            // print($row["image"]);
-            // echo '<img src="data:image/jpeg;base64,'.base64_encode($row["image"]).'"/>'
-            // echo "img src='",$row['image'],"' width='175' height='200' />";
             echo '<img src="data:image/jpg;base64,'.base64_encode( stripslashes($row['image']) ).'" width="200" height="100"/>'
             ?>
       		</td>

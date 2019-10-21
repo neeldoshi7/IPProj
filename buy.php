@@ -23,6 +23,7 @@ echo "<h3> PHP List All Session Variables</h3>";
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="myScript.js">
 
@@ -30,6 +31,8 @@ echo "<h3> PHP List All Session Variables</h3>";
     <title>Auction Site</title>
   </head>
   <body class="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="index.html">Auction Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,11 +62,14 @@ echo "<h3> PHP List All Session Variables</h3>";
       </div>
     </nav>
 <br />
+
+
+
 <div class="container">
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    <table border="1">
+    <table border="1" id="ttable">
       <tr>
         <th>Sr. No.</th>
         <th>Name</th>
@@ -73,12 +79,14 @@ echo "<h3> PHP List All Session Variables</h3>";
       <?php
       $mysqlquery4 = "select * from `product` where sold=0";
       $result = $conn->query($mysqlquery4);
+      $pid_array = Array();
 
 if (!$result) {
     trigger_error('Invalid query: ' . $conn->error);
 }
       if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()) {
+            array_push($pid_array,$row['p_id'])
           ?>
           <tr>
           <td>
@@ -87,13 +95,13 @@ if (!$result) {
             ?>
       		</td>
       		<td>
-          <a href="https://www.google.com">
+          <!-- <a href="https://www.google.com"> -->
 
             <?php
             print($row["p_name"]);
             ?>
 
-           </a>
+          <!-- </a> -->
            </td>
           <td>
             <?php
@@ -102,7 +110,7 @@ if (!$result) {
       		</td>
           <td>
             <?php
-            echo '<img src="data:image/jpg;base64,'.base64_encode( stripslashes($row['image']) ).'" width="200" height="100"/>'
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
             ?>
       		</td>
 
@@ -114,6 +122,31 @@ if (!$result) {
       }
       ?>
     </table>
+    <?php
+    print_r($pid_array);
+    ?>
 </div>
-  </body>
+
+<script>
+document.querySelector("#ttable").onclick = function(ev) {
+   // ev.target <== td element
+   // ev.target.parentElement <== tr
+   var index = ev.target.parentElement.rowIndex;
+   console.log(index);
+}
+// console.log("abcd");
+// $(function(){
+//         $("table tr").click(function(){
+//         alert (this.rowIndex);
+//         });
+//     });
+// $("table tr").click(function(){
+//     alert (this.rowIndex);
+// });
+// $('#thetable').find('tr').click( function(){
+// alert('You clicked row '+ ($(this).index()+1) );
+// });
+</script>
+
+    </body>
 </html>

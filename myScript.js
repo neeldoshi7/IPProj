@@ -1,5 +1,7 @@
 console.log("Hello from my javascript");
 
-function myIndexFadeOut(){
-  $("#indexContent").fadeOut();
-}
+$(document).ready(function(){
+  $(".clicked").click(function(){
+    $("#indexContent").fadeOut();
+  });
+});

@@ -54,16 +54,82 @@ session_start();
     </nav>
 <br />
 <div class="container">
-  <h1><b>Sign Up</b></h1>
-</div><br />
+  <h2><b>Be a member and never miss anything...</b></h2>
+</div>
 <hr />
 <br />
 
-<div class="jumbotron container">
+
+
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"><h3>Sign Up</h3></div>
+                    <div class="card-body">
+                        <form class="" name="form2" id="form2" action="signup.php" method="post">
+                          <div class="form-group row">
+                              <label for="email_address" class="col-md-4 col-form-label text-md-right">Name</label>
+                              <div class="col-md-6">
+                                  <input type="textfield" name="sname" value="" id="fname" class="form-control" required autofocus>
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                              <div class="col-md-6">
+                                  <input type="email" name="semail" value="" id="femail" class="form-control" required>
+                              </div>
+                          </div>
+
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                <div class="col-md-6">
+                                    <input type="number" name="spno" value="" id="pnumber" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" name="spass" value="" id="fpass" placeholder="Minimum length should be 8" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Re-enter Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" name="" value="" id="frepass" placeholder="Same as Password" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Sign Up
+                                </button>
+                                <a href="login.html" class="btn btn-link">
+                                    Login?
+                                </a>
+                            </div>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+<!-- <div class="jumbotron container"> -->
 
  <!-- action="index.html" method="post" -->
 
-<form class="" name="form2" id="form2" action="signup.php" method="post">
+<!-- <form class="" name="form2" id="form2" action="signup.php" method="post">
   <h3>Name : </h><input type="textfield" name="sname" value="" id="fname"></input>
 <br /><br />
   <h3>Email : </h><input type="email" name="semail" value="" id="femail">
@@ -78,7 +144,7 @@ session_start();
 <button type="submit" name="form2button" class="btn btn-primary" id="signsubbtn" onclick="myCheck()" >Submit</button>
 </form>
 
-</div>
+</div> -->
 
   </body>
 </html>

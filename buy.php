@@ -36,7 +36,6 @@ echo "<h3> PHP List All Session Variables</h3>";
 }
   </style>
   <body class="">
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -143,13 +142,12 @@ for(var td of tds){
        console.log(td);
        console.log(td.target.textContent);
        // console.log(td);
-       $.session.set("pid", td.target.textContent);
+       // $.session.set("pid", td.target.textContent);
        // <% Session["pid"] =/ td.target.textContent; %>
+       document.cookie = "pid = " + td.target.textContent
+       header("Location: https://auctionsite.000webhostapp.com/product.php");
   })
 }
-console.log("final " + td);
 </script>
-<?php
-echo $_SESSION["pid"]."nnn";?>
     </body>
 </html>

@@ -6,6 +6,9 @@ echo "<h3> PHP List All Session Variables</h3>";
     echo $key." ".$val."<br/>";
 
 
+$_SESSION['pid'] = $_COOKIE['pid'];
+echo $_SESSION['pid']."aaa";
+
 ?>
 
 

@@ -145,7 +145,9 @@ for(var td of tds){
        // $.session.set("pid", td.target.textContent);
        // <% Session["pid"] =/ td.target.textContent; %>
        document.cookie = "pid = " + td.target.textContent
-       header("Location: https://auctionsite.000webhostapp.com/product.php");
+       console.log(document.cookie)
+       window.location = "https://auctionsite.000webhostapp.com/product.php"
+       // header("Location: https://auctionsite.000webhostapp.com/product.php");
   })
 }
 </script>

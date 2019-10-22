@@ -39,7 +39,7 @@ if($result->num_rows === 1){
     <title>Auction Site</title>
   </head>
   <body class="">
-    <div class="se-pre-con"></div>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="index.html">Auction Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -93,37 +93,40 @@ echo $_SESSION["name"];
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
 
 <div>
-  <h2>Products Sold :
+  <h3>Products Sold :
     <?php
-    $mysqlquery5 = "SELECT COUNT(*) FROM product_sold WHERE email = '{$email}'";
-    $result = $conn->query($mysqlquery5)->fetch_array();
-    echo $result[0];
+    $mysqlquery5 = "SELECT p_id FROM product_sold WHERE email = '{$email}'";
+    $result1 = $conn->query($mysqlquery5)->fetch_array();
+    var_dump($result1);
+    echo count($result1);
+    $_SESSION["sold"] = $result1;
+    var_dump($_SESSION["sold"]);
     ?>
-  </h2>
+  </h3>
 
-  <h2>Products Bought :
+  <h3>Products Bought :
     <?php
-    $mysqlquery6 = "SELECT COUNT(*) FROM product_bought WHERE email = '{$email}'";
-    $result = $conn->query($mysqlquery6)->fetch_array();
-    echo $result[0];
+    $mysqlquery6 = "SELECT p_id FROM product_bought WHERE email = '{$email}'";
+    $result2 = $conn->query($mysqlquery6)->fetch_array();
+    echo count($result2);
     ?>
-  </h2>
+  </h3>
 
-  <h2>Currently Bidding On :
+  <h3>Currently Bidding On :
     <?php
-    $mysqlquery7 = "SELECT COUNT(*) FROM product_bidding WHERE bidder_email = '{$email}'";
-    $result = $conn->query($mysqlquery7)->fetch_array();
-    echo $result[0];
+    $mysqlquery7 = "SELECT p_id FROM product_bidding WHERE bidder_email = '{$email}'";
+    $result3 = $conn->query($mysqlquery7)->fetch_array();
+    echo count($result3);
     ?>
-  </h2>
+  </h3>
 
-  <h2>Products Selling :
+  <h3>Products Selling :
     <?php
-    $mysqlquery8 = "SELECT COUNT(*) FROM product_selling WHERE email = '{$email}'";
-    $result = $conn->query($mysqlquery8)->fetch_array();
-    echo $result[0];
+    $mysqlquery8 = "SELECT p_id FROM product_bidding WHERE seller_email = '{$email}'";
+    $result4 = $conn->query($mysqlquery8)->fetch_array();
+    echo count($result4);
     ?>
-  </h2>
+  </h3>
 
 </div>
 

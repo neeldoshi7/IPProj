@@ -136,15 +136,19 @@ if (!$result) {
 var tds = document.querySelectorAll(".tdd")
 for(var td of tds){
 
-  td.addEventListener("click",function Myfunction(tds[td-1]){
+  td.addEventListener("click",function Myfunction(td){
        // var index = td.textContent;
 
-       console.log(.textContent);
-
+       console.log(td);
+       console.log(td.target.textContent);
+       // console.log(td);
+       $.session.set("pid", td.target.textContent);
+       // <% Session["pid"] =/ td.target.textContent; %>
   })
 }
 console.log("final " + td);
 </script>
-
+<?php
+echo $_SESSION["pid"]."nnn";?>
     </body>
 </html>

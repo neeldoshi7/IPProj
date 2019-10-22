@@ -65,7 +65,7 @@ echo $_SESSION['pid']."aaa";
 
 
 <?php
-mysqlquery9 = "select * from product where pid=$_SESSION["pid"]";
+$mysqlquery9 = "select * from product where pid='{$_SESSION["pid"]}'";
 $result = $conn->query($mysqlquery9);
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();
@@ -89,8 +89,8 @@ else{
   echo "Last Bid : ";
 }
  echo $amount ?></h4>
-
-
+<h4>Bid : <h4><input type="textfield" name="bid_amount" value="" id="bid_amount"></input>
+<button>BID</button>
 </div>
 <hr />
   </body>

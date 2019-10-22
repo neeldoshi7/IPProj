@@ -65,8 +65,12 @@ echo $_SESSION['pid']."aaa";
 
 
 <?php
-$mysqlquery9 = "select * from product where pid='{$_SESSION["pid"]}'";
+$pid = $_SESSION["pid"];
+$mysqlquery9 = "select * from product where pid='{$pid}'";
 $result = $conn->query($mysqlquery9);
+
+if ($result === false) { die(mysqli_error($conn)); }
+
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();
 

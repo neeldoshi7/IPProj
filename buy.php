@@ -30,6 +30,11 @@ echo "<h3> PHP List All Session Variables</h3>";
 </script>
     <title>Auction Site</title>
   </head>
+  <style>
+.tdd{
+  color: blue;
+}
+  </style>
   <body class="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -69,9 +74,9 @@ echo "<h3> PHP List All Session Variables</h3>";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    <table border="1" id="ttable">
+    <table border="1">
       <tr>
-        <th>Sr. No.</th>
+        <th>Product ID</th>
         <th>Name</th>
         <th>Amount</th>
         <th>Image</th>
@@ -89,7 +94,7 @@ if (!$result) {
             array_push($pid_array,$row['p_id'])
           ?>
           <tr>
-          <td>
+          <td class="tdd">
             <?php
             print($row["p_id"]);
             ?>
@@ -128,24 +133,17 @@ if (!$result) {
 </div>
 
 <script>
-document.querySelector("#ttable").onclick = function(ev) {
-   // ev.target <== td element
-   // ev.target.parentElement <== tr
-   var index = ev.target.parentElement.rowIndex;
-   console.log(index);
+var tds = document.querySelectorAll(".tdd")
+for(var td of tds){
+
+  td.addEventListener("click",function Myfunction(tds[td-1]){
+       // var index = td.textContent;
+
+       console.log(.textContent);
+
+  })
 }
-// console.log("abcd");
-// $(function(){
-//         $("table tr").click(function(){
-//         alert (this.rowIndex);
-//         });
-//     });
-// $("table tr").click(function(){
-//     alert (this.rowIndex);
-// });
-// $('#thetable').find('tr').click( function(){
-// alert('You clicked row '+ ($(this).index()+1) );
-// });
+console.log("final " + td);
 </script>
 
     </body>

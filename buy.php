@@ -137,17 +137,9 @@ var tds = document.querySelectorAll(".tdd")
 for(var td of tds){
 
   td.addEventListener("click",function Myfunction(td){
-       // var index = td.textContent;
-       // console.log(td);
-       // console.log(td.target);
-       // console.log(td.target.innerText);
-       // console.log(td);
-       // $.session.set("pid", td.target.textContent);
-       // <% Session["pid"] =/ td.target.textContent; %>
        document.cookie = "pid=" + td.target.innerText
        console.log(document.cookie)
        window.location = "https://auctionsite.000webhostapp.com/product.php"
-       // header("Location: https://auctionsite.000webhostapp.com/product.php");
   })
 }
 </script>

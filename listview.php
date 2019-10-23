@@ -60,6 +60,7 @@
     <th>Name</th>
     <th>Amount</th>
     <th>Image</th>
+    <th>Sell</th>
   </tr>
   <?php
   $pid_selling = $_SESSION['pid_selling'];
@@ -77,7 +78,7 @@ trigger_error('Invalid query: ' . $conn->error);
         array_push($pid_array,$row['p_id'])
       ?>
       <tr>
-      <td class="tdd">
+      <td class="tdr">
         <?php
         print($row["p_id"]);
         ?>
@@ -97,6 +98,9 @@ trigger_error('Invalid query: ' . $conn->error);
         echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
         ?>
       </td>
+      <td>
+        <button onclick="sell()">SELL</button>
+      </td>
 
   </tr>
   <?php
@@ -109,6 +113,19 @@ trigger_error('Invalid query: ' . $conn->error);
 <?php
 }
 ?>
+<script>
+var tds = document.querySelectorAll(".tdr")
+for(var td of tds){
+
+  td.addEventListener("click",function Myfunction(td){
+       document.cookie = "pid=" + td.target.innerText
+       // console.log(document.cookie)
+       // window.location = "https://auctionsite.000webhostapp.com/product.php"
+  })
+}
+</script>
+
+
 
 <table border="1">
   <tr>

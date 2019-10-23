@@ -75,7 +75,7 @@ if($result->num_rows === 1){
     </div>
     <hr />
 <br /><br />
-    <div class="">
+    <!-- <div class="">
 <h2>Welcome
   <?php
 echo $_SESSION["name"];
@@ -86,9 +86,33 @@ echo $_SESSION["name"];
 <div>
   <h3>Phone Number : <?php echo $_SESSION["phoneno"]; ?> </h3><br/>
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
+</div> -->
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h2 class="card-title">Welcome
+      <?php
+    echo $_SESSION["name"];
+     ?>
+   </h2>
+  </br>
+  <h4 class="card-subtitle mb-2 text-muted"> Phone Number : <?php echo $_SESSION["phoneno"]; ?></h4>
+  <h4 class="card-subtitle mb-2 text-muted">Email : <?php echo $_SESSION["email"]; ?></h4>
+
+  </div>
+</div>
+</br>
+</br>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title">Catalogue</h5>
+
+
+  </div>
 </div>
 
-<div><form action="buy.php"><input type="submit" class="btn btn-primary">BUY</form></div>
+<div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div>
 
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
 

@@ -6,6 +6,9 @@ echo "<h3> PHP List All Session Variables</h3>";
     echo $key." ".$val."<br/>";
 
 print_r($_SESSION['pid_sold']);
+print_r($_SESSION['pid_bought']);
+print_r($_SESSION['pid_bidding']);
+print_r($_SESSION['pid_selling']);
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +78,6 @@ print_r($_SESSION['pid_sold']);
   </tr>
   <?php
   $pid_selling = $_SESSION['pid_selling'];
-
   foreach ($pid_selling as $value) {
     $pid = $value;
 
@@ -110,13 +112,14 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <form action="listview.php">
+        <!-- <form >
           <input type="submit" name="sell" value="sell" onclick="sell()"/>
-        </form>
+        </form> -->
         <?php
-        function sell() {
-          echo "yayyyyyy";
-        }?>
+        // function sell() {
+        //   echo "yayyyyyy";
+        // }
+        ?>
       </td>
 
   </tr>
@@ -125,11 +128,10 @@ trigger_error('Invalid query: ' . $conn->error);
   }else {
     print 'null';
   }
+}
   ?>
 </table>
-<?php
-}
-?>
+
 
 
 <table border="1">
@@ -181,11 +183,10 @@ trigger_error('Invalid query: ' . $conn->error);
   }else {
     print 'null';
   }
+}
   ?>
 </table>
-<?php
-}
-?>
+
 
 
 <table border="1">
@@ -237,11 +238,10 @@ trigger_error('Invalid query: ' . $conn->error);
   }else {
     print 'null';
   }
+}
   ?>
 </table>
-<?php
-}
-?>
+
 
 <table border="1">
   <tr>
@@ -292,11 +292,10 @@ trigger_error('Invalid query: ' . $conn->error);
   }else {
     print 'null';
   }
+}
   ?>
 </table>
-<?php
-}
-?>
+
 
   </body>
 </html>

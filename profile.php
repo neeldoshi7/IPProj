@@ -101,7 +101,8 @@ echo $_SESSION["name"];
 
   </div>
 </div>
-
+</br>
+</br>
 <div><form action="buy.php"><input type="submit" class="btn btn-primary">BUY</form></div>
 
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>

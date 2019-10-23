@@ -106,6 +106,7 @@ echo $_SESSION["name"];
     print_r($pid_sold);
     echo $result1->num_rows;
     $_SESSION['pid_sold'] = $pid_sold;
+    print_r($_SESSION['pid_sold']);
     ?>
   </h3>
 

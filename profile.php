@@ -97,10 +97,9 @@ echo $_SESSION["name"];
     <?php
     $mysqlquery5 = "SELECT p_id FROM product_sold WHERE email = '{$email}'";
     $result1 = $conn->query($mysqlquery5)->fetch_array();
-    var_dump($result1);
     echo count($result1);
-    $_SESSION["sold"] = $result1;
-    var_dump($_SESSION["sold"]);
+    $_SESSION['sold'] = $result1;
+    var_dump($_SESSION['sold']);
     ?>
   </h3>
 

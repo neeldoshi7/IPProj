@@ -103,7 +103,16 @@ echo $_SESSION["name"];
 </div>
 </br>
 </br>
-<div><form action="buy.php"><input type="submit" class="btn btn-primary">BUY</form></div>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title">Catalogue</h5>
+
+
+  </div>
+</div>
+
+<div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div>
 
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
 

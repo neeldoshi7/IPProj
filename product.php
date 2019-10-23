@@ -96,6 +96,11 @@ else{
 
  <!-- <script type="text/javascript"> -->
  <?php
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['checkBid']))
+    {
+        checkBid();
+    }
+
  function checkBid(){
 
  // console.log(typeof val);
@@ -132,10 +137,10 @@ else{
 
 
 <h4>Bid : <h4>
-  <form method="post">
+  <form action="#" method="post">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
   <!-- <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()"> -->
-<button onclick="checkBid()">BID</button>
+<button name="checkBid" onclick="checkBid()">BID</button>
 </form>
 </div>
 <hr />

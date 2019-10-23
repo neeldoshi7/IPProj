@@ -95,39 +95,71 @@ echo $_SESSION["name"];
 <div>
   <h3>Products Sold :
     <?php
-    $mysqlquery5 = "SELECT p_id FROM product_sold WHERE email = '{$email}'";
-    $result1 = $conn->query($mysqlquery5)->fetch_array();
-    echo count($result1);
-    $_SESSION['sold'] = $result1;
-    var_dump($_SESSION['sold']);
+    $pid_sold = array();
+    $mysqlquery5 = "SELECT p_id FROM product_sold WHERE email like '{$email}'";
+    $result1 = $conn->query($mysqlquery5);
+    if($result1->num_rows > 0){
+      while($row1 = $result1->fetch_assoc()){
+        array_push($pid_sold,$row1['p_id']);
+      }
+    }
+    print_r($pid_sold);
+    echo $result1->num_rows;
+    $_SESSION['pid_sold'] = $pid_sold;
     ?>
   </h3>
 
   <h3>Products Bought :
     <?php
-    $mysqlquery6 = "SELECT p_id FROM product_bought WHERE email = '{$email}'";
-    $result2 = $conn->query($mysqlquery6)->fetch_array();
-    echo count($result2);
+    $pid_bought = array();
+    $mysqlquery6 = "SELECT p_id FROM product_bought WHERE email like '{$email}'";
+    $result2 = $conn->query($mysqlquery6);
+    if($result2->num_rows > 0){
+      while($row2 = $result2->fetch_assoc()){
+        array_push($pid_bought,$row2['p_id']);
+      }
+    }
+    print_r($pid_bought);
+    echo $result2->num_rows;
+    $_SESSION['pid_bought'] = $pid_bought;
     ?>
   </h3>
 
   <h3>Currently Bidding On :
     <?php
-    $mysqlquery7 = "SELECT p_id FROM product_bidding WHERE bidder_email = '{$email}'";
-    $result3 = $conn->query($mysqlquery7)->fetch_array();
-    echo count($result3);
+    $pid_bidding = array();
+    $mysqlquery7 = "SELECT p_id FROM product_bidding WHERE bidder_email like '{$email}'";
+    $result3 = $conn->query($mysqlquery7);
+    if($result3->num_rows > 0){
+      while($row3 = $result3->fetch_assoc()){
+        array_push($pid_bidding,$row3['p_id']);
+      }
+    }
+    print_r($pid_bidding);
+    echo $result3->num_rows;
+    $_SESSION['pid_bidding'] = $pid_bidding;
     ?>
   </h3>
 
   <h3>Products Selling :
     <?php
-    $mysqlquery8 = "SELECT p_id FROM product_bidding WHERE seller_email = '{$email}'";
-    $result4 = $conn->query($mysqlquery8)->fetch_array();
-    echo count($result4);
+    $pid_selling = array()
+    $mysqlquery8 = "SELECT p_id FROM product_bidding WHERE seller_email like '{$email}'";
+    $result4 = $conn->query($mysqlquery8);
+    if($result4->num_rows > 0){
+      while($row4 = $result4->fetch_assoc()){
+        array_push($pid_selling,$row4['p_id']);
+      }
+    }
+    print_r($pid_selling);
+    echo $result4->num_rows;
+    $_SESSION['pid_selling'] = $pid_selling;
     ?>
   </h3>
 
 </div>
+
+<button onclick="window.location.href='https://auctionsite.000webhostapp.com/listview.php'">VIEW DATA</button>
 
 </div>
 

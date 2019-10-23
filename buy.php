@@ -165,14 +165,14 @@ if (!$result) {
       <?php
       $mysqlquery5 = "select * from `product` where sold=0";
       $result1 = $conn->query($mysqlquery5);
-      $pid_array = Array();
+      $pid_arrayy = Array();
 
 if (!$result1) {
     trigger_error('Invalid query: ' . $conn->error);
 }
       if($result1->num_rows > 0) {
           while($row1 = $result->fetch_assoc()) {
-            array_push($pid_array,$row1['p_id'])
+            array_push($pid_arrayy,$row1['p_id'])
           ?>
           <li class="media">
             <?php
@@ -209,7 +209,7 @@ if (!$result1) {
       ?>
     </ul>
     <?php
-    print_r($pid_array);
+    print_r($pid_arrayy);
     ?>
 </div>
 

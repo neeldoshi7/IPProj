@@ -92,7 +92,9 @@ else{
   $amount = $row["bid_amount"];
   echo "Last Bid : ";
 }
- echo $amount ?></h4>
+ echo $amount;
+ $_SESSION['amount'] = $amount;
+ ?></h4>
 
  <!-- <script type="text/javascript"> -->
  <?php
@@ -105,7 +107,9 @@ else{
 $bid_amount = $result;
  // console.log(typeof val);
  // console.log(bid_amount.value);
- if(($bid_amount<=$amount)){
+ $amount=$_SESSION['amount'];
+ echo $amount;
+ if($bid_amount<=$amount){
    echo '<script language="javascript">';
    echo 'alert("Increase Bid Amount")';
    echo '</script>';
@@ -119,6 +123,9 @@ $bid_amount = $result;
    $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$pid}'";
    $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
    $rrr = $conn->query($qq);
+   if(!$rrr){
+     echo "Youyre screwed";
+   }
    $res = $conn->query($q1);
    if($res->num_rows > 0){
      echo "is in";

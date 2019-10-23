@@ -101,11 +101,11 @@ else{
         checkBid();
     }
 
- function checkBid(){
-$bid_amount = "<script>document.write(bid_amount.value)</script>";
+ function checkBid($result){
+$bid_amount = $result;
  // console.log(typeof val);
  // console.log(bid_amount.value);
- if((bid_amount.value<=$amount)){
+ if(($bid_amount<=$amount)){
    echo '<script language="javascript">';
    echo 'alert("Increase Bid Amount")';
    echo '</script>';
@@ -139,7 +139,7 @@ $bid_amount = "<script>document.write(bid_amount.value)</script>";
 <h4>Bid : <h4>
   <form action="" method="get">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
-  <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()">
+  <input type="submit" class="btn btn-primary" value="BID" >
 <!-- <button name="checkBid" onclick="checkBid()">BID</button> -->
 </form>
 </div>
@@ -148,6 +148,7 @@ $bid_amount = "<script>document.write(bid_amount.value)</script>";
 <?php
 $result = $_GET['bid_amount'];
 echo $result;
+checkBid($result);
 echo "Hello";
 ?>
   </body>

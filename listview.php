@@ -5,7 +5,7 @@ echo "<h3> PHP List All Session Variables</h3>";
     foreach ($_SESSION as $key=>$val)
     echo $key." ".$val."<br/>";
 
-var_dump($_SESSION['pid_selling']);
+print_r($_SESSION['pid_sold']);
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +74,8 @@ var_dump($_SESSION['pid_selling']);
   </tr>
   <?php
   $pid_selling = $_SESSION['pid_selling'];
-  foreach ($pid as $value) {
+
+  foreach ($pid_selling as $value) {
     $pid = $value;
 
   $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
@@ -146,7 +147,7 @@ for(var td of tds){
   </tr>
   <?php
   $pid_bidding = $_SESSION['pid_bidding'];
-  foreach ($pid as $value) {
+  foreach ($pid_bidding as $value) {
     $pid = $value;
 
   $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
@@ -203,7 +204,7 @@ trigger_error('Invalid query: ' . $conn->error);
   </tr>
   <?php
   $pid_sold = $_SESSION['pid_sold'];
-  foreach ($pid as $value) {
+  foreach ($pid_sold as $value) {
     $pid = $value;
 
   $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
@@ -259,7 +260,7 @@ trigger_error('Invalid query: ' . $conn->error);
   </tr>
   <?php
   $pid_bought = $_SESSION['pid_bought'];
-  foreach ($pid as $value) {
+  foreach ($pid_bought as $value) {
     $pid = $value;
 
   $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";

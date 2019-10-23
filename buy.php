@@ -74,13 +74,8 @@ echo "<h3> PHP List All Session Variables</h3>";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    <table border="1">
-      <tr>
-        <th>Product ID</th>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Image</th>
-      </tr>
+    <ul class="list-unstyled">
+
       <?php
       $mysqlquery4 = "select * from `product` where sold=0";
       $result = $conn->query($mysqlquery4);
@@ -93,40 +88,40 @@ if (!$result) {
           while($row = $result->fetch_assoc()) {
             array_push($pid_array,$row['p_id'])
           ?>
-          <tr>
-          <td class="tdd">
+          <li class="media">
+            <?php
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+            ?>
+          <div class="media-body">
+          <h2 class="mt-0 mb-1">
             <?php
             print($row["p_id"]);
             ?>
-      		</td>
-      		<td>
+
+
           <!-- <a href="https://www.google.com"> -->
 
             <?php
             print($row["p_name"]);
             ?>
-
+          </h2>
           <!-- </a> -->
-           </td>
-          <td>
+
+
             <?php
             print($row["base_amount"]);
             ?>
-      		</td>
-          <td>
-            <?php
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
-            ?>
-      		</td>
+            
+          </div>
+</li>
 
-      </tr>
       <?php
         }
       }else {
         print 'null';
       }
       ?>
-    </table>
+    </ul>
     <?php
     print_r($pid_array);
     ?>

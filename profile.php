@@ -161,7 +161,7 @@ echo $_SESSION["name"];
 
   <h3>Products Selling :
     <?php
-    $pid_selling = array()
+    $pid_selling = array();
     $mysqlquery8 = "SELECT p_id FROM product_bidding WHERE seller_email like '{$email}'";
     $result4 = $conn->query($mysqlquery8);
     if($result4->num_rows > 0){

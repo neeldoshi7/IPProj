@@ -112,7 +112,7 @@ echo $_SESSION["name"];
 
   </div>
 </div>
-
+</br></br>
 <!-- <div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div> -->
 <div class="card" style="width: 20rem;">
   <div class="card-body">
@@ -120,7 +120,7 @@ echo $_SESSION["name"];
     <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div>
 
   </div>
-</div></br></br>
+</div>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->
 
 <div>

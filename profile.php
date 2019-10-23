@@ -114,7 +114,7 @@ echo $_SESSION["name"];
 
 <div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div>
 
-<div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>
+<div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div>
 
 <div>
   <h3>Products Sold :

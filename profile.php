@@ -89,7 +89,7 @@ echo $_SESSION["name"];
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div> -->
 
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 25rem;">
   <div class="card-body">
     <h2 class="card-title">Welcome
       <?php
@@ -105,7 +105,7 @@ echo $_SESSION["name"];
 </br>
 </br>
 
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 25rem;">
   <div class="card-body">
     <h5 class="card-title">Catalogue</h5>
     <div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div>
@@ -114,7 +114,7 @@ echo $_SESSION["name"];
 </div>
 </br></br>
 <!-- <div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div> -->
-<div class="card" style="width: 20rem;">
+<div class="card" style="width: 25rem;">
   <div class="card-body">
     <h5 class="card-title">Catalogue</h5>
     <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div>

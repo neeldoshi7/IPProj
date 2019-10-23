@@ -66,14 +66,14 @@ echo $_SESSION['pid']."aaa";
 
 <?php
 $pid = $_SESSION["pid"];
-$mysqlquery9 = "select * from product where pid='{$pid}'";
+$mysqlquery9 = "select * from product where p_id='{$pid}'";
 $result = $conn->query($mysqlquery9);
 
 if ($result === false) { die(mysqli_error($conn)); }
 
 if($result->num_rows === 1){
   $row = $result->fetch_assoc();
-
+}
 ?>
 <div>
 <?php
@@ -93,8 +93,11 @@ else{
   echo "Last Bid : ";
 }
  echo $amount ?></h4>
-<h4>Bid : <h4><input type="textfield" name="bid_amount" value="" id="bid_amount"></input>
-<button>BID</button>
+<h4>Bid : <h4>
+  <form>
+  <input type="number" name="bid_amount" value="" id="bid_amount"></input>
+<input type="submit">BID</submit>
+</form>
 </div>
 <hr />
   </body>

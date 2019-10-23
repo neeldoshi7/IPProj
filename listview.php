@@ -67,6 +67,12 @@ print_r($_SESSION['pid_selling']);
     <hr />
 <br /><br />
 
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+
+alert($(input).parent().parent().parent().children(".tdr").text());
+</script>
+
 <!-- <script>
 var tds = document.querySelectorAll(".tdr")
 for(var td of tds){
@@ -132,8 +138,8 @@ trigger_error('Invalid query: ' . $conn->error);
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
       ?>
-      <tr class="tdr">
-      <td>
+      <tr >
+      <td class="tdr">
         <?php
         print($row["p_id"]);
         ?>

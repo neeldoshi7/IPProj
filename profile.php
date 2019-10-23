@@ -108,7 +108,7 @@ echo $_SESSION["name"];
 <div class="card" style="width: 25rem;">
   <div class="card-body">
     <h5 class="card-title">Catalogue</h5>
-    <div><form action="buy.php"><input type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span>BUY</form></div>
+    <div>To Buy: <form action="buy.php"><input type="submit" class="btn btn-primary"></form></div>
 
   </div>
 </div>
@@ -117,8 +117,8 @@ echo $_SESSION["name"];
 <div class="card" style="width: 25rem;">
   <div class="card-body">
     <h5 class="card-title">Catalogue</h5>
-    <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div>
-
+    <div>To Sell Product <form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary"></form></div>
+</br></br>
   </div>
 </div>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->

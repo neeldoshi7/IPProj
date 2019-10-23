@@ -30,11 +30,7 @@ echo "<h3> PHP List All Session Variables</h3>";
 </script>
     <title>Auction Site</title>
   </head>
-  <style>
-.tdd{
-  color: blue;
-}
-  </style>
+
   <body class="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

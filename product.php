@@ -108,6 +108,7 @@ else{
    echo "something";
    $bid_amount = "<script>document.write(bid_amount.value)</script>";
    echo "mm".$bid_amount;
+   $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$pid}'";
    $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
    $res = $conn->query($q1);
    if($res->num_rows > 0){

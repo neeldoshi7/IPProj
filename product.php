@@ -115,7 +115,8 @@ $bid_amount = $result;
    echo "something";
 
    echo "mm".$bid_amount.$_SESSION['pid'];
-   $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$_SESSION['pid']}'";
+   $pid = $_SESSION['pid'];
+   $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$pid}'";
    $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
    $rrr = $conn->query($qq);
    $res = $conn->query($q1);

@@ -52,7 +52,7 @@ echo $_SESSION['pid']."aaa";
             <a class="nav-link" href="signup.html">SignUp</a>
           </li>
 
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="about.html">About Us <span class="sr-only">(current)</span> </a>
           </li>
 

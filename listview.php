@@ -1,17 +1,3 @@
-<?php
-session_start();
-require "connection.php";
-echo "<h3> PHP List All Session Variables</h3>";
-    foreach ($_SESSION as $key=>$val)
-    echo $key." ".$val."<br/>";
-
-
-$_SESSION['pid'] = $_COOKIE['pid'];
-echo $_SESSION['pid']."aaa";
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -32,7 +18,8 @@ echo $_SESSION['pid']."aaa";
     <title>Auction Site</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">Auction Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,41 +48,20 @@ echo $_SESSION['pid']."aaa";
     </nav>
 <br />
     <div class="container">
-      <h1><b>Product</b></h>
+      <h1><b>About Us</b></h>
+    </div>
+    <hr />
+<br /><br />
+    <div class="container">
+      <p>In hac habitasse platea dictumst. Pellentesque ac tempus libero. Donec posuere nisl non quam volutpat, ac malesuada erat venenatis. In quis mauris eget diam consequat pretium. Vestibulum tempus, eros nec sodales lacinia, urna mauris mattis felis, non porttitor nisl magna eu eros. Donec diam metus, dictum et auctor ut, finibus et tellus. Mauris at erat urna. Mauris aliquam dignissim hendrerit. Donec sit amet lorem vel urna vestibulum mollis eu eu dui.</p>
 
+    </div>
 
-<?php
-$pid = $_SESSION["pid"];
-$mysqlquery9 = "select * from product where pid='{$pid}'";
-$result = $conn->query($mysqlquery9);
+    <div class="">
+      <?php include 'connection.php';
+      echo "Hey";
 
-if ($result === false) { die(mysqli_error($conn)); }
-
-if($result->num_rows === 1){
-  $row = $result->fetch_assoc();
-
-?>
-<div>
-<?php
-echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
-?>
-</div>
-<h3><?php echo $row["p_name"] ?></h3>
-<h4><?php echo $row["p_description"] ?></h4>
-<h4><?php echo $row["seller"] ?></h4>
-<h4><?php
-if($row["bid_amount"]===0){
-  $amount = $row["base_amount"];
-  echo "Base Amount : ";
-}
-else{
-  $amount = $row["bid_amount"];
-  echo "Last Bid : ";
-}
- echo $amount ?></h4>
-<h4>Bid : <h4><input type="textfield" name="bid_amount" value="" id="bid_amount"></input>
-<button>BID</button>
-</div>
-<hr />
+      ?>
+    </div>
   </body>
 </html>

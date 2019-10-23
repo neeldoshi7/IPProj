@@ -169,7 +169,7 @@ echo $_SESSION["name"];
   <h3>Products Selling :
     <?php
     $pid_selling = array();
-    $mysqlquery8 = "SELECT p_id FROM product_bidding WHERE seller_email like '{$email}'";
+    $mysqlquery8 = "SELECT p_id FROM product WHERE seller like '{$email}'";
     $result4 = $conn->query($mysqlquery8);
     if($result4->num_rows > 0){
       while($row4 = $result4->fetch_assoc()){

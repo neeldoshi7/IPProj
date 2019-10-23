@@ -1,21 +1,3 @@
-
-
-Skip to content
-Using Gmail with screen readers
-
-1 of 3,259
-profile.php
-Inbox
-x
-
-Neel Doshi
-Attachments
-8:48 PM (0 minutes ago)
-to me
-
-
-Attachments area
-
 <?php
 session_start();
 require "connection.php";
@@ -183,5 +165,3 @@ echo $_SESSION["name"];
 
   </body>
 </html>
-profile.php
-Displaying profile.php.

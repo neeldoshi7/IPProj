@@ -137,13 +137,19 @@ $bid_amount = "<script>document.write(bid_amount.value)</script>";
 
 
 <h4>Bid : <h4>
-  <form action="profile.php" method="get">
+  <form action="" method="get">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
   <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()">
 <!-- <button name="checkBid" onclick="checkBid()">BID</button> -->
 </form>
 </div>
 <hr />
+
+<?php
+$result = $_GET['bid_amount'];
+echo $result;
+echo "Hello";
+?>
   </body>
 
 </html>

@@ -205,11 +205,5 @@ echo $_SESSION["name"];
 
 </div>
 
-<?php
-$result = $_GET['bid_amount'];
-echo $result;
-echo "Hello";
-?>
-
   </body>
 </html>

@@ -122,14 +122,13 @@ echo $_SESSION["name"];
 </div>
 </br></br>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->
-
+<hr>
+</br>
+<h2>View User Data</h2>
 <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
+    User Details
   </a>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-target
-  </button>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">

@@ -86,7 +86,6 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        array_push($pid_array,$row['p_id'])
       ?>
       <tr>
       <td class="tdr">
@@ -110,7 +109,13 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <button onclick="sell()">SELL</button>
+        <form action="listview.php">
+          <input type="submit" name="sell" value="sell" onclick="sell()"/>
+        </form>
+        <?php
+        function sell() {
+          echo "yayyyyyy";
+        }?>
       </td>
 
   </tr>
@@ -124,18 +129,6 @@ trigger_error('Invalid query: ' . $conn->error);
 <?php
 }
 ?>
-<script>
-var tds = document.querySelectorAll(".tdr")
-for(var td of tds){
-
-  td.addEventListener("click",function Myfunction(td){
-       document.cookie = "pid=" + td.target.innerText
-       // console.log(document.cookie)
-       // window.location = "https://auctionsite.000webhostapp.com/product.php"
-  })
-}
-</script>
-
 
 
 <table border="1">
@@ -158,7 +151,6 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        array_push($pid_array,$row['p_id'])
       ?>
       <tr>
       <td class="tdd">
@@ -215,7 +207,6 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        array_push($pid_array,$row['p_id'])
       ?>
       <tr>
       <td class="tdd">
@@ -271,7 +262,6 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        array_push($pid_array,$row['p_id'])
       ?>
       <tr>
       <td class="tdd">

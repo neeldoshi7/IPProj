@@ -163,39 +163,39 @@ if (!$result) {
     <ul class="list-unstyled">
 
       <?php
-      $mysqlquery4 = "select * from `product` where sold=0";
-      $result = $conn->query($mysqlquery4);
-      $pid_array = Array();
+      $mysqlquery5 = "select * from `product` where sold=0";
+      $result1 = $conn->query($mysqlquery5);
+      $pid_arrayy = Array();
 
-if (!$result) {
+if (!$result1) {
     trigger_error('Invalid query: ' . $conn->error);
 }
-      if($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
-            array_push($pid_array,$row['p_id'])
+      if($result1->num_rows > 0) {
+          while($row1 = $result->fetch_assoc()) {
+            array_push($pid_arrayy,$row1['p_id'])
           ?>
           <li class="media">
             <?php
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row1['image']).'" width="200" height="100"/>'
             ?>
           <div class="media-body">
           <h2 class="mt-0 mb-1">
             <?php
-            print($row["p_id"]);
+            print($row1["p_id"]);
             ?>
 
 
           <!-- <a href="https://www.google.com"> -->
 
             <?php
-            print($row["p_name"]);
+            print($row1["p_name"]);
             ?>
           </h2>
           <!-- </a> -->
 
 
             <?php
-            print($row["base_amount"]);
+            print($row1["base_amount"]);
             ?>
 
           </div>
@@ -209,7 +209,7 @@ if (!$result) {
       ?>
     </ul>
     <?php
-    print_r($pid_array);
+    print_r($pid_arrayy);
     ?>
 </div>
 

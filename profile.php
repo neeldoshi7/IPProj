@@ -89,7 +89,7 @@ echo $_SESSION["name"];
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div> -->
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <div class="card-body">
     <h2 class="card-title">Welcome
       <?php

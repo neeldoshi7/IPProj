@@ -118,9 +118,9 @@ echo $_SESSION["name"];
   <div class="card-body">
     <h5 class="card-title">Catalogue</h5>
     <div>To Sell Product <form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary"></form></div>
-</br></br>
   </div>
 </div>
+</br></br>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->
 
 <div>

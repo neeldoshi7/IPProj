@@ -120,7 +120,7 @@ echo $_SESSION["name"];
     <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div>
 
   </div>
-</div>
+</div></br></br>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->
 
 <div>

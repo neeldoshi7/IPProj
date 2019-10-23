@@ -96,9 +96,16 @@ else{
 <h4>Bid : <h4>
   <form>
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
-<input type="submit">BID</submit>
+<button type="submit">BID</button>
 </form>
 </div>
 <hr />
   </body>
+  <script type="text/javascript">
+
+  if(!(bid_amount.value>(PHPamount)){
+    alert("Increase Bid Amount");
+  }
+
+  </script>
 </html>

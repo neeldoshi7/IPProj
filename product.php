@@ -94,17 +94,19 @@ else{
 }
  echo $amount ?></h4>
 
- <script type="text/javascript">
+ <!-- <script type="text/javascript"> -->
+ <?php
  function checkBid(){
- var val = <?php echo $amount ?>;
+
  // console.log(typeof val);
  // console.log(bid_amount.value);
- if((bid_amount.value<=val)){
-   alert("Increase Bid Amount");
+ if((bid_amount.value<=$amount)){
+   echo '<script language="javascript">';
+   echo 'alert("Increase Bid Amount")';
+   echo '</script>';
  }
  else{
 
-   <?php
    echo "something";
    $bid_amount = "<script>document.write(bid_amount.value)</script>";
    echo "mm".$bid_amount;
@@ -120,15 +122,17 @@ else{
      echo "in here".$pid;
      $q3 = "insert into product_bidding (p_id, seller_email, bidder_email, amount) values ('{$pid}', '{$row['seller']}', '{$_SESSION['email']}', '{$bid_amount}'";
    }
-   ?>
-   alert("BID placed");
+   echo '<script language="javascript">';
+   echo 'alert("BID placed")';
+   echo '</script>';
  }
  }
- </script>
+ ?>
+ <!-- </script> -->
 
 
 <h4>Bid : <h4>
-  <form >
+  <form method="post">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
   <!-- <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()"> -->
 <button onclick="checkBid()">BID</button>

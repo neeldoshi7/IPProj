@@ -94,19 +94,40 @@ else{
 }
  echo $amount ?></h4>
 <h4>Bid : <h4>
-  <form>
+  <form action="#" post="">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
-<button type="submit" onclick="checkBid()">BID</button>
+  <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()">
+<!-- <button type="submit" onclick="checkBid()">BID</button> -->
 </form>
 </div>
 <hr />
   </body>
   <script type="text/javascript">
   function checkBid(){
-var val = "<?php echo $amount ?>";
-console.log(val);
-  if(!(bid_amount.value>val)){
+var val = <?php echo $amount ?>;
+// console.log(typeof val);
+// console.log(bid_amount.value);
+  if((bid_amount.value<=val)){
     alert("Increase Bid Amount");
+  }
+  else{
+    alert("BID placed");
+    <?php
+    echo "something";
+    $bid_amount = "<script>document.write(bid_amount.value)</script>";
+    echo "mm".$bid_amount;
+    $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
+    $res = $conn->query($q1);
+    if($res->num_rows > 0){
+      echo "is in";
+      $q2 = "update product_bidding set amount='{$bid_amount}' where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
+      $res2 = $conn->query($q2);
+    }
+    else{
+      echo "in here".$pid;
+      $q3 = "insert into product_bidding (p_id, seller_email, bidder_email, amount) values ('{$pid}', '{$row['seller']}', '{$_SESSION['email']}', '{$bid_amount}'";
+    }
+    ?>
   }
 }
   </script>

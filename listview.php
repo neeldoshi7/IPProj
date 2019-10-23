@@ -62,7 +62,7 @@
     <th>Image</th>
   </tr>
   <?php
-  $pid_array = $_SESSION['pid_array'];
+  $pid_selling = $_SESSION['pid_selling'];
   foreach ($pid as $value) {
     $pid = $value;
 
@@ -83,13 +83,9 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-      <!-- <a href="https://www.google.com"> -->
-
         <?php
         print($row["p_name"]);
         ?>
-
-      <!-- </a> -->
        </td>
       <td>
         <?php
@@ -111,12 +107,177 @@ trigger_error('Invalid query: ' . $conn->error);
   ?>
 </table>
 <?php
-
 }
 ?>
-</div>
+
+<table border="1">
+  <tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Image</th>
+  </tr>
+  <?php
+  $pid_bidding = $_SESSION['pid_bidding'];
+  foreach ($pid as $value) {
+    $pid = $value;
+
+  $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
+  $result = $conn->query($mysqlquery4);
+
+if (!$result) {
+trigger_error('Invalid query: ' . $conn->error);
+}
+  if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        array_push($pid_array,$row['p_id'])
+      ?>
+      <tr>
+      <td class="tdd">
+        <?php
+        print($row["p_id"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        print($row["p_name"]);
+        ?>
+       </td>
+      <td>
+        <?php
+        print($row["base_amount"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+        ?>
+      </td>
+
+  </tr>
+  <?php
+    }
+  }else {
+    print 'null';
+  }
+  ?>
+</table>
+<?php
+}
+?>
 
 
-    </div>
+<table border="1">
+  <tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Image</th>
+  </tr>
+  <?php
+  $pid_sold = $_SESSION['pid_sold'];
+  foreach ($pid as $value) {
+    $pid = $value;
+
+  $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
+  $result = $conn->query($mysqlquery4);
+
+if (!$result) {
+trigger_error('Invalid query: ' . $conn->error);
+}
+  if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        array_push($pid_array,$row['p_id'])
+      ?>
+      <tr>
+      <td class="tdd">
+        <?php
+        print($row["p_id"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        print($row["p_name"]);
+        ?>
+       </td>
+      <td>
+        <?php
+        print($row["base_amount"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+        ?>
+      </td>
+
+  </tr>
+  <?php
+    }
+  }else {
+    print 'null';
+  }
+  ?>
+</table>
+<?php
+}
+?>
+
+<table border="1">
+  <tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Image</th>
+  </tr>
+  <?php
+  $pid_bought = $_SESSION['pid_bought'];
+  foreach ($pid as $value) {
+    $pid = $value;
+
+  $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
+  $result = $conn->query($mysqlquery4);
+
+if (!$result) {
+trigger_error('Invalid query: ' . $conn->error);
+}
+  if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        array_push($pid_array,$row['p_id'])
+      ?>
+      <tr>
+      <td class="tdd">
+        <?php
+        print($row["p_id"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        print($row["p_name"]);
+        ?>
+       </td>
+      <td>
+        <?php
+        print($row["base_amount"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+        ?>
+      </td>
+
+  </tr>
+  <?php
+    }
+  }else {
+    print 'null';
+  }
+  ?>
+</table>
+<?php
+}
+?>
+
   </body>
 </html>

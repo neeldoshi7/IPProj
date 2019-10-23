@@ -99,7 +99,7 @@ echo $_SESSION["name"];
     $result1 = $conn->query($mysqlquery5)->fetch_array();
     echo count($result1);
     $_SESSION['sold'] = $result1;
-    var_dump($_SESSION['sold']);
+    var_dump($_SESSION['sold'];
     ?>
   </h3>
 

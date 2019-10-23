@@ -72,7 +72,7 @@ echo "<h3> PHP List All Session Variables</h3>";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-    
+
 
 
 
@@ -124,10 +124,11 @@ if (!$result1) {
             ?>
           <div class="media-body">
           <h2 class="mt-0 mb-1">
+            <div class="tdd">
             <?php
             print($row1["p_id"]);
             ?>
-
+          </div>
 
           <!-- <a href="https://www.google.com"> -->
 

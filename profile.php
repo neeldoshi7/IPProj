@@ -208,6 +208,7 @@ echo $_SESSION["name"];
 <?php
 $result = $_GET['bid_amount'];
 echo $result;
+echo "Hello";
 ?>
 
   </body>

@@ -69,13 +69,22 @@ print_r($_SESSION['pid_selling']);
 
 <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script>
+// $(".input").click(function(){
+//   alert("clicked");
+//   alert($(this).parent());
+//   alert($(this).parent().parent().siblings(".tdr").text());
+// })
 
-alert($(input).parent().parent().parent().children(".tdr").text());
+$(".input").on('click', function(e){
+  $(this).parent().parent().addClass('selected').siblings().removeClass('selected');
+  alert($("#table tr.selected td:first").html());
+})
+
 </script>
 
 <!-- <script>
 var tds = document.querySelectorAll(".tdr")
-for(var td of tds){
+for(var td of tds){ i
 
   td.addEventListener("click",function Myfunction(td){
     console.log(td);
@@ -88,6 +97,7 @@ for(var td of tds){
 
 <?php
 function sell(){
+  echo "IN SELLLLLL";
   $q = "select * from product_bidding where p_id like '{$pid}'";
   $r = $conn->query($q);
   if($r->num_rows == 1){
@@ -116,7 +126,7 @@ function sell(){
 
 
 
-<table border="1">
+<table border="1" id="table">
   <tr>
     <th>Product ID</th>
     <th>Name</th>
@@ -160,8 +170,8 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <form>
-          <input type="submit" name="sell" value="sell" onclick="sell()"/>
+        <form action="" method="get">
+          <input class="input" type="submit" name="sell" value="" onclick="sell()"/>
         </form>
 
       </td>

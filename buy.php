@@ -132,6 +132,94 @@ if (!$result) {
     ?>
 </div>
 
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+</ul>
+
+<div class="container">
+    <div class="">
+      <h1><b>Catalogue</b></h>
+    </div>
+    <table border="1">
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Image</th>
+      </tr>
+      <?php
+      $mysqlquery4 = "select * from `product` where sold=0";
+      $result = $conn->query($mysqlquery4);
+      $pid_array = Array();
+
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
+      if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            array_push($pid_array,$row['p_id'])
+          ?>
+          <tr>
+          <td class="tdd">
+            <?php
+            print($row["p_id"]);
+            ?>
+      		</td>
+      		<td>
+          <!-- <a href="https://www.google.com"> -->
+
+            <?php
+            print($row["p_name"]);
+            ?>
+
+          <!-- </a> -->
+           </td>
+          <td>
+            <?php
+            print($row["base_amount"]);
+            ?>
+      		</td>
+          <td>
+            <?php
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+            ?>
+      		</td>
+
+      </tr>
+      <?php
+        }
+      }else {
+        print 'null';
+      }
+      ?>
+    </table>
+    <?php
+    print_r($pid_array);
+    ?>
+</div>
+
+
+
 <script>
 var tds = document.querySelectorAll(".tdd")
 for(var td of tds){

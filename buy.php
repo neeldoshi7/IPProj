@@ -18,7 +18,7 @@ echo "<h3> PHP List All Session Variables</h3>";
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="myStyle.css"></link>
+    <!-- <link rel="stylesheet" href="myStyle.css"></link> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@ echo "<h3> PHP List All Session Variables</h3>";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="myScript.js">
-
+<link rel="stylesheet" href="myStyle.css"></link>
 </script>
     <title>Auction Site</title>
   </head>
@@ -84,7 +84,7 @@ if (!$result1) {
           ?>
           <li class="media">
             <?php
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row1['image']).'" width="200" height="100"/>'
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row1['image']).'" class="zoom" width="200" height="100"/>'
             ?>
           <div class="media-body">
           <h2 class="mt-0 mb-1">

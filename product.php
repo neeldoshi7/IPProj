@@ -96,8 +96,8 @@ else{
 <h4>Bid : <h4>
   <form action="#" post="">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
-  <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()">
-<!-- <button type="submit" onclick="checkBid()">BID</button> -->
+  <!-- <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()"> -->
+<button type="submit" onclick="checkBid()">BID</button>
 </form>
 </div>
 <hr />

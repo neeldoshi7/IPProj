@@ -76,6 +76,7 @@ print_r($_SESSION['pid_selling']);
 // })
 
 $(".input").on('click', function(e){
+  alert("asd");
   $(this).parent().parent().addClass('selected').siblings().removeClass('selected');
   alert($("#table tr.selected td:first").html());
 })
@@ -170,9 +171,10 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <form action="" method="get">
-          <input class="input" type="submit" name="sell" value="" onclick="sell()"/>
-        </form>
+        <button class="input">SELL</button>
+        <!-- <form action="" method="get">
+          <input class="input" type="submit" name="sell" value="SELL"/>
+        </form> -->
 
       </td>
 

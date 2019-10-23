@@ -67,6 +67,48 @@ print_r($_SESSION['pid_selling']);
     <hr />
 <br /><br />
 
+<!-- <script>
+var tds = document.querySelectorAll(".tdr")
+for(var td of tds){
+
+  td.addEventListener("click",function Myfunction(td){
+    console.log(td);
+       document.cookie = "pid=" + td.target.innerText
+       console.log(document.cookie)
+       window.location = "https://auctionsite.000webhostapp.com/product.php"
+  })
+}
+</script> -->
+
+<?php
+function sell(){
+  $q = "select * from product_bidding where p_id like '{$pid}'";
+  $r = $conn->query($q);
+  if($r->num_rows == 1){
+    $row = $r->fetch_assoc();
+    $buyer_email = $row['bidder_email'];
+    $seller_email = $row['seller_email'];
+    $amount = $row['amount'];
+  }
+
+
+
+  $q1 = "update product set sold = 1 where p_id like '{$pid}'";
+  $q2 = "delete from product_bidding where p_id like '{$pid}'";
+  $q3 = "insert into product_bought (p_id, email, amount) values ('{$pid}', '{$buyer_email}', '{$amount}')";
+  $q4 = "delete from product_selling where p_id likr '{$pid}'";
+  $q5 = "insert into product_sold (p_id, email, amount) values ('{$pid}', {'$seller_email'}, '{$amount}')";
+  $r1 = $conn->query($q1);
+  $r2 = $conn->query($q2);
+  $r3 = $conn->query($q3);
+  $r4 = $conn->query($q4);
+  $r5 = $conn->query($q5);
+}
+
+?>
+
+
+
 
 <table border="1">
   <tr>
@@ -90,8 +132,8 @@ trigger_error('Invalid query: ' . $conn->error);
   if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
       ?>
-      <tr>
-      <td class="tdr">
+      <tr class="tdr">
+      <td>
         <?php
         print($row["p_id"]);
         ?>
@@ -112,14 +154,10 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <!-- <form >
+        <form >
           <input type="submit" name="sell" value="sell" onclick="sell()"/>
-        </form> -->
-        <?php
-        // function sell() {
-        //   echo "yayyyyyy";
-        // }
-        ?>
+        </form>
+
       </td>
 
   </tr>

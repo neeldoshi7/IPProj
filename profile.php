@@ -123,6 +123,85 @@ echo $_SESSION["name"];
 </br></br>
 <!-- <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary">SELL</form></div> -->
 
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div>
+      <h3>Products Sold :
+        <?php
+        $pid_sold = array();
+        $mysqlquery5 = "SELECT p_id FROM product_sold WHERE email like '{$email}'";
+        $result1 = $conn->query($mysqlquery5);
+        if($result1->num_rows > 0){
+          while($row1 = $result1->fetch_assoc()){
+            array_push($pid_sold,$row1['p_id']);
+          }
+        }
+        print_r($pid_sold);
+        echo $result1->num_rows;
+        $_SESSION['pid_sold'] = $pid_sold;
+        print_r($_SESSION['pid_sold']);
+        ?>
+      </h3>
+
+      <h3>Products Bought :
+        <?php
+        $pid_bought = array();
+        $mysqlquery6 = "SELECT p_id FROM product_bought WHERE email like '{$email}'";
+        $result2 = $conn->query($mysqlquery6);
+        if($result2->num_rows > 0){
+          while($row2 = $result2->fetch_assoc()){
+            array_push($pid_bought,$row2['p_id']);
+          }
+        }
+        print_r($pid_bought);
+        echo $result2->num_rows;
+        $_SESSION['pid_bought'] = $pid_bought;
+        ?>
+      </h3>
+
+      <h3>Currently Bidding On :
+        <?php
+        $pid_bidding = array();
+        $mysqlquery7 = "SELECT p_id FROM product_bidding WHERE bidder_email like '{$email}'";
+        $result3 = $conn->query($mysqlquery7);
+        if($result3->num_rows > 0){
+          while($row3 = $result3->fetch_assoc()){
+            array_push($pid_bidding,$row3['p_id']);
+          }
+        }
+        print_r($pid_bidding);
+        echo $result3->num_rows;
+        $_SESSION['pid_bidding'] = $pid_bidding;
+        ?>
+      </h3>
+
+      <h3>Products Selling :
+        <?php
+        $pid_selling = array();
+        $mysqlquery8 = "SELECT p_id FROM product WHERE seller like '{$email}'";
+        $result4 = $conn->query($mysqlquery8);
+        if($result4->num_rows > 0){
+          while($row4 = $result4->fetch_assoc()){
+            array_push($pid_selling,$row4['p_id']);
+          }
+        }
+        print_r($pid_selling);
+        echo $result4->num_rows;
+        $_SESSION['pid_selling'] = $pid_selling;
+        ?>
+      </h3>
+
+    </div>  </div>
+</div>
+
 <div>
   <h3>Products Sold :
     <?php

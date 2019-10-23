@@ -171,7 +171,7 @@ if (!$result1) {
     trigger_error('Invalid query: ' . $conn->error);
 }
       if($result1->num_rows > 0) {
-          while($row1 = $result->fetch_assoc()) {
+          while($row1 = $result1->fetch_assoc()) {
             array_push($pid_arrayy,$row1['p_id'])
           ?>
           <li class="media">

@@ -84,7 +84,7 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="
 <h4><?php echo $row["p_description"] ?></h4>
 <h4><?php echo $row["seller"] ?></h4>
 <h4><?php
-if($row["bid_amount"]===0){
+if($row["bid_amount"]==0){
   $amount = $row["base_amount"];
   echo "Base Amount : ";
 }

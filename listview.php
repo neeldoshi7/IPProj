@@ -1,3 +1,13 @@
+<?php
+session_start();
+require "connection.php";
+echo "<h3> PHP List All Session Variables</h3>";
+    foreach ($_SESSION as $key=>$val)
+    echo $key." ".$val."<br/>";
+
+var_dump($_SESSION['pid_selling']);
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

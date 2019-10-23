@@ -101,4 +101,11 @@ else{
 </div>
 <hr />
   </body>
+  <script type="text/javascript">
+
+  if(!(bid_amount.value>(PHPamount)){
+    alert("Increase Bid Amount");
+  }
+
+  </script>
 </html>

@@ -72,11 +72,6 @@ echo "<h3> PHP List All Session Variables</h3>";
     <div class="">
       <h1><b>Catalogue</b></h>
     </div>
-
-<div class="container">
-    <div class="">
-      <h1><b>Catalogue</b></h>
-    </div>
     <ul class="list-unstyled">
 
       <?php

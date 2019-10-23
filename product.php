@@ -102,7 +102,7 @@ else{
     }
 
  function checkBid(){
-
+$bid_amount = "<script>document.write(bid_amount.value)</script>";
  // console.log(typeof val);
  // console.log(bid_amount.value);
  if((bid_amount.value<=$amount)){
@@ -113,7 +113,7 @@ else{
  else{
 
    echo "something";
-   $bid_amount = "<script>document.write(bid_amount.value)</script>";
+
    echo "mm".$bid_amount;
    $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$pid}'";
    $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
@@ -137,7 +137,7 @@ else{
 
 
 <h4>Bid : <h4>
-  <form action="#" method="post">
+  <form action="profile.php" method="post">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
   <!-- <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()"> -->
 <button name="checkBid" onclick="checkBid()">BID</button>

@@ -113,7 +113,8 @@ if (!$result1) {
 
           </div>
 </li>
-
+</br>
+<hr></br>
       <?php
         }
       }else {

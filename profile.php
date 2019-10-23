@@ -88,6 +88,20 @@ echo $_SESSION["name"];
   <h3>Email : <?php echo $_SESSION["email"]; ?></h3>
 </div>
 
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Welcome
+      <?php
+    echo $_SESSION["name"];
+     ?>
+    </h5>
+  </br>
+  <h6 class="card-subtitle mb-2 text-muted"> Phone Number : <?php echo $_SESSION["phoneno"]; ?></h6>
+  <h6 class="card-subtitle mb-2 text-muted">Email : <?php echo $_SESSION["email"]; ?></h6>
+
+  </div>
+</div>
+
 <div><form action="buy.php"><input type="submit" class="btn btn-primary">BUY</form></div>
 
 <div><form action="sellitem.php" method="post"><input type="submit" class="btn btn-primary" >SELL</form></div>

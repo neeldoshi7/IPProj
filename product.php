@@ -96,16 +96,18 @@ else{
 <h4>Bid : <h4>
   <form>
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
-<button type="submit">BID</button>
+<button type="submit" onclick="checkBid()">BID</button>
 </form>
 </div>
 <hr />
   </body>
   <script type="text/javascript">
-
-  if(!(bid_amount.value>(PHPamount)){
+  function checkBid(){
+var val = "<?php echo $amount ?>";
+console.log(val);
+  if(!(bid_amount.value>val)){
     alert("Increase Bid Amount");
   }
-
+}
   </script>
 </html>

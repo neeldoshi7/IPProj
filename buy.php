@@ -84,7 +84,7 @@ if (!$result1) {
           ?>
           <li class="media">
             <?php
-            echo '<img src="data:image/jpeg;base64,'.base64_encode($row1['image']).'" width="200" height="100"/>'
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row1['image']).'" class="zoom" width="200" height="100"/>'
             ?>
           <div class="media-body">
           <h2 class="mt-0 mb-1">

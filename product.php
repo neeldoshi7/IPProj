@@ -137,7 +137,7 @@ $bid_amount = "<script>document.write(bid_amount.value)</script>";
 
 
 <h4>Bid : <h4>
-  <form action="profile.php" method="post">
+  <form action="profile.php" method="get">
   <input type="number" name="bid_amount" value="" id="bid_amount"></input>
   <input type="submit" class="btn btn-primary" value="BID" onclick="checkBid()">
 <!-- <button name="checkBid" onclick="checkBid()">BID</button> -->

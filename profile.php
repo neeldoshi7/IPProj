@@ -201,7 +201,7 @@ echo $_SESSION["name"];
     </div>  </div>
 </div>
 
-<button onclick="window.location.href='https://auctionsite.000webhostapp.com/listview.php'">VIEW DATA</button>
+<button onclick="window.location.href='https://auctionsite.000webhostapp.com/listview.php'">View Detailed Data</button>
 
 </div>
 

@@ -48,20 +48,75 @@
     </nav>
 <br />
     <div class="container">
-      <h1><b>About Us</b></h>
+      <h1><b>List</b></h>
     </div>
     <hr />
 <br /><br />
-    <div class="container">
-      <p>In hac habitasse platea dictumst. Pellentesque ac tempus libero. Donec posuere nisl non quam volutpat, ac malesuada erat venenatis. In quis mauris eget diam consequat pretium. Vestibulum tempus, eros nec sodales lacinia, urna mauris mattis felis, non porttitor nisl magna eu eros. Donec diam metus, dictum et auctor ut, finibus et tellus. Mauris at erat urna. Mauris aliquam dignissim hendrerit. Donec sit amet lorem vel urna vestibulum mollis eu eu dui.</p>
 
-    </div>
 
-    <div class="">
-      <?php include 'connection.php';
-      echo "Hey";
+<table border="1">
+  <tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Image</th>
+  </tr>
+  <?php
+  $pid_array = $_SESSION['pid_array'];
+  foreach ($pid as $value) {
+    $pid = $value;
 
+  $mysqlquery4 = "select * from `product` where p_id = '{$pid}'";
+  $result = $conn->query($mysqlquery4);
+
+if (!$result) {
+trigger_error('Invalid query: ' . $conn->error);
+}
+  if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        array_push($pid_array,$row['p_id'])
       ?>
+      <tr>
+      <td class="tdd">
+        <?php
+        print($row["p_id"]);
+        ?>
+      </td>
+      <td>
+      <!-- <a href="https://www.google.com"> -->
+
+        <?php
+        print($row["p_name"]);
+        ?>
+
+      <!-- </a> -->
+       </td>
+      <td>
+        <?php
+        print($row["base_amount"]);
+        ?>
+      </td>
+      <td>
+        <?php
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+        ?>
+      </td>
+
+  </tr>
+  <?php
+    }
+  }else {
+    print 'null';
+  }
+  ?>
+</table>
+<?php
+
+}
+?>
+</div>
+
+
     </div>
   </body>
 </html>

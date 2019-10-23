@@ -38,7 +38,7 @@ echo "<h3> PHP List All Session Variables</h3>";
   <body class="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html">Auction Site</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,8 +67,6 @@ echo "<h3> PHP List All Session Variables</h3>";
       </div>
     </nav>
 <br />
-
-
 
 <div class="container">
     <div class="">
@@ -131,6 +129,92 @@ if (!$result) {
     print_r($pid_array);
     ?>
 </div>
+
+
+
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+</ul>
+
+<div class="container">
+    <div class="">
+      <h1><b>Catalogue</b></h>
+    </div>
+    <ul class="list-unstyled">
+
+      <?php
+      $mysqlquery4 = "select * from `product` where sold=0";
+      $result = $conn->query($mysqlquery4);
+      $pid_array = Array();
+
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
+      if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            array_push($pid_array,$row['p_id'])
+          ?>
+          <li class="media">
+            <?php
+            echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="200" height="100"/>'
+            ?>
+          <div class="media-body">
+          <h2 class="mt-0 mb-1">
+            <?php
+            print($row["p_id"]);
+            ?>
+
+
+          <!-- <a href="https://www.google.com"> -->
+
+            <?php
+            print($row["p_name"]);
+            ?>
+          </h2>
+          <!-- </a> -->
+
+
+            <?php
+            print($row["base_amount"]);
+            ?>
+
+          </div>
+</li>
+
+      <?php
+        }
+      }else {
+        print 'null';
+      }
+      ?>
+    </ul>
+    <?php
+    print_r($pid_array);
+    ?>
+</div>
+
+
+
 
 <script>
 var tds = document.querySelectorAll(".tdd")

@@ -77,8 +77,8 @@ print_r($_SESSION['pid_selling']);
 
 $(".input").on('click', function(e){
   alert("asd");
-  $(this).parent().parent().addClass('selected').siblings().removeClass('selected');
-  alert($("#table tr.selected td:first").html());
+  // $(this).parent().parent().addClass('selected').siblings().removeClass('selected');
+  // alert($("#table tr.selected td:first").html());
 })
 
 </script>

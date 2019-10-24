@@ -124,9 +124,9 @@ function sell(){
 
 ?>
 
-
-
-
+</br>
+<h1>Selling Table :- </h1>
+</br>
 <table border="1" id="table">
   <tr>
     <th>Product ID</th>
@@ -188,7 +188,9 @@ trigger_error('Invalid query: ' . $conn->error);
   ?>
 </table>
 
-
+</br>
+<h1>Products being bid on :- </h1>
+</br>
 
 <table border="1">
   <tr>
@@ -243,7 +245,9 @@ trigger_error('Invalid query: ' . $conn->error);
   ?>
 </table>
 
-
+</br>
+<h1>Selling Table :- </h1>
+</br>
 
 <table border="1">
   <tr>

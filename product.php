@@ -84,6 +84,7 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" width="
 <h4><?php echo $row["p_description"] ?></h4>
 <h4><?php echo $row["seller"] ?></h4>
 <h4><?php
+$_SESSION['seller'] = $row["seller"];
 if($row["bid_amount"]==0){
   $amount = $row["base_amount"];
   echo "Base Amount : ";
@@ -98,12 +99,11 @@ else{
 
  <!-- <script type="text/javascript"> -->
  <?php
- if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['checkBid']))
-    {
-        checkBid();
-    }
+
 
  function checkBid($result){
+   require "connection.php";
+
    echo 'in bid';
 $bid_amount = $result;
  // console.log(typeof val);
@@ -117,29 +117,51 @@ $bid_amount = $result;
    echo '</script>';
  }
  else{
+//
+   // echo "something";
 
-   echo "something";
-
-   echo "mm".$bid_amount.$_SESSION['pid'];
+   // echo "mm".$bid_amount.$_SESSION['pid'];
    $pid = $_SESSION['pid'];
-   $qq = "update product set bid_amount = '{$bid_amount}' where p_id like '{$pid}'";
+   // echo $pid;
+   print_r($conn);
+   // echo $conn;
+   // $qq = "select * from product";
+   $qq = "update `product` set `bid_amount` = {$bid_amount} where `p_id` like {$pid}";
+echo $qq;
+// $rrr = mysqli_query($conn, $qq);
+
    $rrr = $conn->query($qq);
    echo $rrr;
-   print_r($rrr);
+   // if ($rrr === false) { die(mysqli_error($conn)); }
+
+   if($rrr === TRUE) {
+	echo "Insert Successful";
+} else {
+	echo "Error: " . $qq . "<br>" . mysqli_error($conn);
+}
+   // echo "empty"$rrr;
+   // print_r($rrr);
    if(!$rrr){
      echo "Youre screwed";
    }
-   $q1 = "select p_id from product_bidding where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
+   $q1 = "select p_id from product_bidding where seller_email like '{$_SESSION['seller']}' and bidder_email like '{$_SESSION['email']}'";
 
    $res = $conn->query($q1);
    if($res->num_rows > 0){
      echo "is in";
-     $q2 = "update product_bidding set amount='{$bid_amount}' where seller_email like '{$row['seller']}' and bidder_email like '{$_SESSION['email']}'";
+     $q2 = "update product_bidding set amount='{$bid_amount}' where seller_email like '{$_SESSION['seller']}' and bidder_email like '{$_SESSION['email']}'";
      $res2 = $conn->query($q2);
    }
    else{
      echo "in here".$pid;
-     $q3 = "insert into product_bidding (p_id, seller_email, bidder_email, amount) values ('{$pid}', '{$row['seller']}', '{$_SESSION['email']}', '{$bid_amount}'";
+     $q3 = "insert into `product_bidding` (`p_id`, `seller_email`, `bidder_email`, `amount`) values ({$pid}, '{$_SESSION['seller']}', '{$_SESSION['email']}', {$bid_amount})";
+     $rrr3 = $conn->query($q3);
+     echo $rrr3;
+     if($rrr3 === TRUE) {
+  	echo "Insert Successful";
+  } else {
+  	echo "Error: " . $q3 . "<br>" . mysqli_error($conn);
+  }
    }
    echo '<script language="javascript">';
    echo 'alert("BID placed")';

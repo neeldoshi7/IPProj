@@ -1,9 +1,9 @@
 <?php
 session_start();
 require "connection.php";
-echo "<h3> PHP List All Session Variables</h3>";
-    foreach ($_SESSION as $key=>$val)
-    echo $key." ".$val."<br/>";
+// echo "<h3> PHP List All Session Variables</h3>";
+//     foreach ($_SESSION as $key=>$val)
+//     echo $key." ".$val."<br/>";
 
 
 

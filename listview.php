@@ -246,7 +246,7 @@ trigger_error('Invalid query: ' . $conn->error);
 </table>
 
 </br>
-<h1>Selling Table :- </h1>
+<h1>Products Sold :- </h1>
 </br>
 
 <table border="1">
@@ -302,6 +302,9 @@ trigger_error('Invalid query: ' . $conn->error);
   ?>
 </table>
 
+</br>
+<h1>Products Bought :- </h1>
+</br>
 
 <table border="1">
   <tr>

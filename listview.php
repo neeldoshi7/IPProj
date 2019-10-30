@@ -150,7 +150,7 @@ trigger_error('Invalid query: ' . $conn->error);
       while($row = $result->fetch_assoc()) {
       ?>
       <tr >
-      <td class="tdr">
+      <td class="tdr" class="sellId">
         <?php
         print($row["p_id"]);
         ?>
@@ -187,6 +187,21 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   ?>
 </table>
+
+<script>
+var sold = document.querySelectorAll(".input")
+for(var s of sold){
+
+  s.addEventListener("click",function Myfunction(s){
+      console.log($('td').eq(0).text());
+      console.log(sold);
+      console.log(s);
+       // document.cookie = "pid=" + td.target.innerText
+       // console.log(document.cookie)
+       // window.location = "https://auctionsite.000webhostapp.com/product.php"
+  })
+}
+</script>
 
 </br>
 <h1>Products being bid on :- </h1>

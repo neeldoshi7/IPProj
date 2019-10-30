@@ -171,7 +171,7 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <button class="input">SELL</button>
+        <button class="input" onclick="sell()">SELL</button>
         <!-- <form action="" method="get">
           <input class="input" type="submit" name="sell" value="SELL"/>
         </form> -->

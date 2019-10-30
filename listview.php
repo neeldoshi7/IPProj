@@ -150,7 +150,7 @@ trigger_error('Invalid query: ' . $conn->error);
       while($row = $result->fetch_assoc()) {
       ?>
       <tr >
-      <td class="tdr">
+      <td class="sellId">
         <?php
         print($row["p_id"]);
         ?>
@@ -187,6 +187,37 @@ trigger_error('Invalid query: ' . $conn->error);
 }
   ?>
 </table>
+
+<script>
+var sold = document.querySelectorAll(".input")
+for(var s of sold){
+
+  s.addEventListener("click",function Myfunction(s){
+
+    var target = $( event.target );
+    //console.log(target.parent());
+    //console.log(target.parent().parent());
+    var sss = target.parent().parent().toArray();
+    //console.log("JI "+sss[0].childNodes);
+    var c = sss[0].childNodes;
+    console.log(c[1].innerText);
+    //console.log(sss);
+
+    //SO basically c[1].innerText is your pid variable
+
+      // console.log($('tr').eq(s));
+      // var temp = $('tr').eq(s);
+      // console.log(temp);
+      // // console.log(temp.$('td').eq(0).text());
+      // console.log($('td').eq(0));
+      // console.log(s);
+      // console.log($('td'));
+       // document.cookie = "pid=" + td.target.innerText
+       // console.log(document.cookie)
+       // window.location = "https://auctionsite.000webhostapp.com/product.php"
+  })
+}
+</script>
 
 </br>
 <h1>Products being bid on :- </h1>

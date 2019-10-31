@@ -6,6 +6,7 @@ $name = $_POST["sname"];
 $email = $_POST["semail"];
 $pno = $_POST["spno"];
 $pass = $_POST["spass"];
+$rpass = $_POST["rpass"];
 
 $mysqlquery = "insert into user(name , email , phoneno , password ) values ('{$name}','{$email}','{$pno}','{$pass}')";
 

@@ -44,9 +44,11 @@ else {
   echo 'alert("User doest not exist")';
   echo '</script>';
   session_unset();
-  echo "Session variables are unset.no user";
-  echo "Email " . $_SESSION["email"] . ".<br>";
-  echo "Password " . $_SESSION["password"] . ".";
+  // echo "Session variables are unset.no user";
+  // echo "Email " . $_SESSION["email"] . ".<br>";
+  // echo "Password " . $_SESSION["password"] . ".";
+  include 'login.html';
+  // header("Location: https://auctionsite.000webhostapp.com/login.html");
 }
 
 $conn->close();

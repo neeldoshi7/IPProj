@@ -120,7 +120,7 @@ for(var td of tds){ i
 //   $r3 = $conn->query($q3);
 //   $r4 = $conn->query($q4);
 //   $r5 = $conn->query($q5);
-}
+// }
 ?>
 
 </br>

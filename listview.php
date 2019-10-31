@@ -75,11 +75,11 @@ print_r($_SESSION['pid_selling']);
 //   alert($(this).parent().parent().siblings(".tdr").text());
 // })
 
-$(".input").on('click', function(e){
-  alert("asd");
+// $(".input").on('click', function(e){
+//   alert("asd");
   // $(this).parent().parent().addClass('selected').siblings().removeClass('selected');
   // alert($("#table tr.selected td:first").html());
-})
+// })
 
 </script>
 
@@ -97,31 +97,30 @@ for(var td of tds){ i
 </script> -->
 
 <?php
-function sell(){
-  echo "IN SELLLLLL";
-  $q = "select * from product_bidding where p_id like '{$pid}'";
-  $r = $conn->query($q);
-  if($r->num_rows == 1){
-    $row = $r->fetch_assoc();
-    $buyer_email = $row['bidder_email'];
-    $seller_email = $row['seller_email'];
-    $amount = $row['amount'];
-  }
-
-
-
-  $q1 = "update product set sold = 1 where p_id like '{$pid}'";
-  $q2 = "delete from product_bidding where p_id like '{$pid}'";
-  $q3 = "insert into product_bought (p_id, email, amount) values ('{$pid}', '{$buyer_email}', '{$amount}')";
-  $q4 = "delete from product_selling where p_id likr '{$pid}'";
-  $q5 = "insert into product_sold (p_id, email, amount) values ('{$pid}', {'$seller_email'}, '{$amount}')";
-  $r1 = $conn->query($q1);
-  $r2 = $conn->query($q2);
-  $r3 = $conn->query($q3);
-  $r4 = $conn->query($q4);
-  $r5 = $conn->query($q5);
+// function sell(){
+//   echo "IN SELLLLLL";
+//   $q = "select * from product_bidding where p_id like '{$pid}'";
+//   $r = $conn->query($q);
+//   if($r->num_rows == 1){
+//     $row = $r->fetch_assoc();
+//     $buyer_email = $row['bidder_email'];
+//     $seller_email = $row['seller_email'];
+//     $amount = $row['amount'];
+//   }
+//
+//
+//
+//   $q1 = "update product set sold = 1 where p_id like '{$pid}'";
+//   $q2 = "delete from product_bidding where p_id like '{$pid}'";
+//   $q3 = "insert into product_bought (p_id, email, amount) values ('{$pid}', '{$buyer_email}', '{$amount}')";
+//   $q4 = "delete from product_selling where p_id likr '{$pid}'";
+//   $q5 = "insert into product_sold (p_id, email, amount) values ('{$pid}', {'$seller_email'}, '{$amount}')";
+//   $r1 = $conn->query($q1);
+//   $r2 = $conn->query($q2);
+//   $r3 = $conn->query($q3);
+//   $r4 = $conn->query($q4);
+//   $r5 = $conn->query($q5);
 }
-
 ?>
 
 </br>
@@ -171,7 +170,7 @@ trigger_error('Invalid query: ' . $conn->error);
         ?>
       </td>
       <td>
-        <button class="input" onclick="sell()">SELL</button>
+        <button class="input" >SELL</button>
         <!-- <form action="" method="get">
           <input class="input" type="submit" name="sell" value="SELL"/>
         </form> -->
@@ -193,7 +192,7 @@ var sold = document.querySelectorAll(".input")
 for(var s of sold){
 
   s.addEventListener("click",function Myfunction(s){
-
+    console.log("in onclick function")
     var target = $( event.target );
     //console.log(target.parent());
     //console.log(target.parent().parent());
@@ -204,32 +203,34 @@ for(var s of sold){
     //console.log(sss);
     document.cookie = "pid=" + c[1].innerText
     console.log(document.cookie)
-    <?php
-    $_SESSION['pid'] = $_COOKIE['pid'];
-    $pid = $_SESSION['pid'];
-    echo "IN SELLLLLL";
-    $q = "select * from product_bidding where p_id like '{$pid}'";
-    $r = $conn->query($q);
-    if($r->num_rows == 1){
-      $row = $r->fetch_assoc();
-      $buyer_email = $row['bidder_email'];
-      $seller_email = $row['seller_email'];
-      $amount = $row['amount'];
-    }
+    window.location = "https://auctionsite.000webhostapp.com/sell.php"
 
-
-
-    $q1 = "update product set sold = 1 where p_id like '{$pid}'";
-    $q2 = "delete from product_bidding where p_id like '{$pid}'";
-    $q3 = "insert into product_bought (p_id, email, amount) values ('{$pid}', '{$buyer_email}', '{$amount}')";
-    $q4 = "delete from product_selling where p_id likr '{$pid}'";
-    $q5 = "insert into product_sold (p_id, email, amount) values ('{$pid}', {'$seller_email'}, '{$amount}')";
-    $r1 = $conn->query($q1);
-    $r2 = $conn->query($q2);
-    $r3 = $conn->query($q3);
-    $r4 = $conn->query($q4);
-    $r5 = $conn->query($q5);
-    ?>
+    //
+    // $_SESSION['pid'] = $_COOKIE['pid'];
+    // $pid = $_SESSION['pid'];
+    // echo "IN SELLLLLL";
+    // $q = "select * from product_bidding where p_id like '{$pid}'";
+    // $r = $conn->query($q);
+    // if($r->num_rows == 1){
+    //   $row = $r->fetch_assoc();
+    //   $buyer_email = $row['bidder_email'];
+    //   $seller_email = $row['seller_email'];
+    //   $amount = $row['amount'];
+    // }
+    //
+    //
+    //
+    // $q1 = "update product set sold = 1 where p_id like '{$pid}'";
+    // $q2 = "delete from product_bidding where p_id like '{$pid}'";
+    // $q3 = "insert into product_bought (p_id, email, amount) values ('{$pid}', '{$buyer_email}', '{$amount}')";
+    // $q4 = "delete from product_selling where p_id likr '{$pid}'";
+    // $q5 = "insert into product_sold (p_id, email, amount) values ('{$pid}', {'$seller_email'}, '{$amount}')";
+    // $r1 = $conn->query($q1);
+    // $r2 = $conn->query($q2);
+    // $r3 = $conn->query($q3);
+    // $r4 = $conn->query($q4);
+    // $r5 = $conn->query($q5);
+    //
     //SO basically c[1].innerText is your pid variable
 
       // console.log($('tr').eq(s));
